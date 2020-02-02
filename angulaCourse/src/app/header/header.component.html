@@ -1,0 +1,10 @@
+<p [class.black]="isBlack"> header works!</p>
+<img *ngIf="phone" [src]=imageUrl>
+<div *ngFor=" let image of imageText">
+    <div>
+        <p>{{image.text}}</p>
+    </div>
+    <div>
+        <p><img src="{{image.img}}" alt=""></p>
+    </div>
+</div>
