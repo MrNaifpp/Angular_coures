@@ -4,21 +4,37 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { promise } from 'protractor';
 import { observable } from 'rxjs';
 import { auth } from 'firebase';
+import { AngularFirestore } from '@angular/fire/firestore';
+
+
+
 
 
 @Injectable({
-  
   providedIn: 'root'
 })
 export class ServicesService {
 
-  constructor(public myAuth: AngularFireAuth, private router: Router) { }
+
+  user:user;
+
+  constructor(public myAuth: AngularFireAuth,public db:AngularFirestore, private router: Router) {
+    this.db.firestore.collection('user Information').get().then((snapshot)=>{
+      console.log(snapshot.docs)
+    }).catch(err =>{
+      console.log(err)
+    })
+  }
 
 
 
 
-  signUp (mail , password){
-    return this.myAuth.auth.createUserWithEmailAndPassword(mail,password).then(
+  signUp (User:user){
+    this.user=User;
+    
+    
+
+    return this.myAuth.auth.createUserWithEmailAndPassword(this.user.email,this.user.password).then(
       (success) => {
         alert("Thank you for joing Us");
         this.router.navigate(['/member']);
@@ -59,9 +75,9 @@ export class ServicesService {
 
     return this.myAuth.auth.onAuthStateChanged(firebase => {
       if (firebase){
-        console.log(firebase);
+       
       }else{
-        console.log("You are logOut");
+       
       }
     });
 

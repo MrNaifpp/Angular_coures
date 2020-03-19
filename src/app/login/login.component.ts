@@ -14,7 +14,10 @@ export class LoginComponent implements OnInit {
 
  
   error: any;
+  user:user;
   constructor(public api : ServicesService, private router: Router) { 
+
+    
     if(this.api.isLogIn()){
       this.router.navigate(["/member"]);
     }else{
@@ -37,7 +40,10 @@ export class LoginComponent implements OnInit {
   }
 
 
-  signUp(){
+  signUp(User:user){
+
+    this.user=User;
+
     var mail = (<HTMLInputElement>document.getElementById("email")).value;
     var password = (<HTMLInputElement>document.getElementById("password")).value;
     this.api.signUp(mail,password);
