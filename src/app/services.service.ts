@@ -27,9 +27,6 @@ export class ServicesService {
     
   }
 
-
-
-
   signUp (User:user){
     this.user=User;
     // additional data to DB
@@ -48,7 +45,7 @@ export class ServicesService {
       } 
     ).catch(
       (failed) => {
-        alert('WRONG');
+        alert(failed);
       }
     )
     

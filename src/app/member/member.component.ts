@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicesService } from '../services.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-member',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MemberComponent implements OnInit {
 
-  constructor() { }
+  constructor(public api : ServicesService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  logOut(){
+    this.api.logOut();    
   }
 
 }

@@ -84,8 +84,6 @@ body{
     margin-left: 10pt;
 }
 
-
-
 #text{
     width: auto;
     float: right;
@@ -128,8 +126,25 @@ body{
         color: dimgray;
         text-align: center;
         position: relative;
-        top: 120pt;
+        top: 70pt;
         font-family: Arial, Helvetica, sans-serif;
+    }
+    #backBTN{
+        border-radius: 70pt;
+        border-style: solid;
+        border-width: 1.5pt;
+        width: 50pt;
+        height: 40pt;
+        background-color: lightgreen;
+        color: dimgray;
+        cursor: pointer;
+        font-size: 20pt;
+        font-weight: bold;
+        text-align: center;
+    }
+    #backBTNposition{
+        padding-top: 20pt;
+        margin-left: 220pt;
     }
     #userInput{
         text-align: center;
@@ -154,7 +169,7 @@ body{
     #alignmentOfGrid{
         text-align: center;
         position: relative;
-        top: 200pt;
+        top: 150pt;
     }
     .grid-container {
         display: grid;
