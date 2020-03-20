@@ -15,12 +15,11 @@ export class LoginComponent implements OnInit {
  
   error: any;
   constructor(public api : ServicesService, private router: Router) { 
-    if(this.api.isLogIn()){
-      this.router.navigate(["/member"]);
-    }else{
-      this.router.navigate(["/"]);
-    }
-      
+    // if(this.api.isLogIn()){
+    //   this.router.navigate(["/member"]);
+    // }else{
+    //   this.router.navigate([""]);
+    // }
   }
 
   ngOnInit() {

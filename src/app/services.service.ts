@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { promise } from 'protractor';
-import { observable } from 'rxjs';
-import { auth } from 'firebase';
 
 
 @Injectable({
@@ -48,7 +45,7 @@ export class ServicesService {
 
       return this.myAuth.auth.signOut().then(succes =>{
         alert("you have signOut");
-        this.router.navigate(["/"]);
+        this.router.navigate(["/login"]);
       }
         ).catch(fail =>{return false;})
           

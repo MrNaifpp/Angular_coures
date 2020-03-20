@@ -1,0 +1,136 @@
+*{
+    padding: 0pt;
+    margin: 0pt;
+}
+
+
+
+body{
+    background-color: #2AFC62;
+    width: 100%;
+    height: 100vh;
+    position:absolute; top:0; bottom:0; right:0; left:0;
+}
+#greetings{
+    font-size: 80pt;
+    color: dimgray;
+    text-align: center;
+    position: relative;
+    top: 120pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+    padding: 20pt;
+    width: 250pt;
+    margin-left: auto;
+    margin-right: auto;
+    width: intrinsic;           /* Safari/WebKit uses a non-standard name /
+    width: -moz-max-content;    / Firefox/Gecko /
+    width: -webkit-max-content; / Chrome */
+    padding-bottom: 25vh;
+}
+
+#loginBTN{
+    border-radius: 70pt;
+    border-style: solid;
+    border-width: 1.5pt;
+    width: 100pt;
+    height: 60pt;
+    margin-top: 30pt;
+    margin-bottom: 30pt;
+    background-color: lightgreen;
+    color: dimgray;
+    cursor: pointer;
+}
+
+#signupBTN, #logoutBTN{
+    color: white;
+    font-size: 13pt;
+}
+
+#userInput{
+    text-align: center;
+    position: relative;
+    top: 200pt;
+    margin: 5pt;
+}
+
+#email, #password{
+    border-style: groove;
+    border-radius: 8pt;
+}
+
+#text{
+    width: auto;
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+
+@media only screen and (max-width: 600px) {
+    body{
+        background-color: #2AFC62;
+        width: 100%;
+        height: 100%;
+    }
+    #greetings{
+        font-size: 80pt;
+        color: dimgray;
+        text-align: center;
+        position: relative;
+        top: 120pt;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #userInput{
+        text-align: center;
+        position: relative;
+        top: 200pt;
+        margin-left: 20pt;
+    }
+    #text{
+        width: fit-content;
+        color: dimgray;
+        font-size: 14pt;
+        margin-right: 20pt;
+        border-radius: 2%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #email, #password{
+        border-style: groove;
+        border-radius: 8pt;
+        width: 150pt;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 10pt;
+    }
+
+    #container{
+        margin: 0;
+    }
+
+    #loginBTN{
+        border-radius: 70pt;
+        border-style: solid;
+        border-width: 1.5pt;
+        width: 100pt;
+        height: 60pt;
+        margin-top: 30pt;
+        margin-bottom: 30pt;
+        background-color: lightgreen;
+        color: dimgray;
+        cursor: pointer;
+    }
+    
+    #signupBTN, #logoutBTN{
+        color: white;
+        font-size: 13pt;
+    }
+  }

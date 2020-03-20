@@ -9,12 +9,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { environment } from 'src/environments/environment';
 import { MemberComponent } from './member/member.component';
+import { LoadingPageComponent } from './loading-page/loading-page.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MemberComponent
+    MemberComponent,
+    LoadingPageComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

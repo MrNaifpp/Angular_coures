@@ -3,20 +3,41 @@
 
     </head>
     <body>
-        <form>
-            <input type="email" id="email"><br>
-            <input  type="password" id="password"><br>
-            <button (click)="logIn()">
-                logIn
-            </button>
-            <button (click) ="signUp()">
-                sign up
-            </button>
-            <button (click) ="logOut()">
-                logout
-            </button>
-        </form>
+        <div id='container'>
+            <form>
+                <p id='greetings'>مرحبا</p>
+                <div class='grid-container'>
+                    <div id='userInput'>
+                        <input type="email" id="email">
+                    </div>
 
+                    <div id='userInput'>
+                        <p id='text'>:ايميل</p>
+                    </div>
 
+                    <div id='userInput'> 
+                        <input  type="password" id="password">
+                    </div>
+                
+                    <div id='userInput'>
+                        <p id='text'>:كلمة المرور</p>
+                    </div>
+                </div>
+                <div id='userInput'> 
+                        <button (click)="logIn()" id='loginBTN'>
+                            :تسجيل دخول
+                        </button>
+                        <br>
+                        <a (click) ="signUp()" id='signupBTN' class='btn'>
+                            :تسجيل جديد
+                        </a>
+                        <br>
+                        
+                        <a (click) ="signInGuest()" id='logoutBTN' class='btn'>
+                            مستخدم جيد ؟
+                        </a>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
