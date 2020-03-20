@@ -14,7 +14,7 @@ export class LoadingPageComponent implements OnInit {
     setTimeout(() => {
       this.router.navigate(['/login']);
     },
-    5000);
+    3000);
    }
    
 

@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-
+  signUpPage(){
+    this.router.navigate(['/register']);
+  }
 
   logIn(){
     var mail = (<HTMLInputElement>document.getElementById("email")).value;
@@ -38,18 +40,6 @@ export class LoginComponent implements OnInit {
     
     this.api.logIn(mail, password);
 
-  }
-
-
-  signUp(){
-
-    var mail = (<HTMLInputElement>document.getElementById("email")).value;
-    var password = (<HTMLInputElement>document.getElementById("password")).value;
-    this.user.email= mail;
-    this.user.password=password;
-    
-    
-    this.api.signUp(this.user);
   }
 
   logOut(){

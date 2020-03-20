@@ -48,7 +48,7 @@ export class ServicesService {
       } 
     ).catch(
       (failed) => {
-        return false;
+        alert('WRONG');
       }
     )
     
