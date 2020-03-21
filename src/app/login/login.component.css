@@ -22,7 +22,7 @@ body{
 
 #container{
     margin-top: 80pt;
-    width: 250pt;
+    width: 260pt;
     margin-left: auto;
     margin-right: auto;
     width: intrinsic;           /* Safari/WebKit uses a non-standard name /
@@ -31,6 +31,7 @@ body{
     padding-bottom: 30vh;
     background-color: rgb(0, 0, 0, 0.05);
     border-radius: 10pt;
+    height: 600pt;
 }
 
 #loginBTN{
@@ -68,6 +69,7 @@ body{
     float: right;
     margin-right: 10pt;
     font-family: Arial, Helvetica, sans-serif;
+    color: dimgray;
 }
 
 .grid-container {

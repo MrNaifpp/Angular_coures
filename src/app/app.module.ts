@@ -11,6 +11,8 @@ import { environment } from 'src/environments/environment';
 import { MemberComponent } from './member/member.component';
 import { LoadingPageComponent } from './loading-page/loading-page.component';
 import { RegisterComponent } from './register/register.component';
+import { ItemListComponent } from './item-list/item-list.component';
+import { ItemInfoComponent } from './item-info/item-info.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     MemberComponent,
     LoadingPageComponent,
-    RegisterComponent
+    RegisterComponent,
+    ItemListComponent,
+    ItemInfoComponent
   ],
   imports: [
     BrowserModule,

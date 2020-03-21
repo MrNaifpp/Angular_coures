@@ -1,1 +1,18 @@
-<button (click)="logOut()">button</button>
+<html>
+    <head>
+    </head>
+    <body>
+        <div id='container'>
+            <div (click)="logOut()" id='backBTNposition' >
+                <button id='backBTN'>></button>
+            </div>
+            <div id='BTNholder'>
+            <button (click)="itemListPage()" class='BTNstyle'>قائمة الادوية</button>
+            <button class='BTNstyle'>قائمة التذكير</button>
+            </div>
+            <div id='thirdBTN'>
+            <button class='BTNstyle'>تاريخ ادويتي</button>
+            </div>
+        </div>
+    </body>
+</html>

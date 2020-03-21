@@ -3,23 +3,18 @@ import { ServicesService } from '../services.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-member',
-  templateUrl: './member.component.html',
-  styleUrls: ['./member.component.css']
+  selector: 'app-item-info',
+  templateUrl: './item-info.component.html',
+  styleUrls: ['./item-info.component.css']
 })
-export class MemberComponent implements OnInit {
+export class ItemInfoComponent implements OnInit {
 
   constructor(public api : ServicesService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  logOut(){
-    this.api.logOut();    
+  membersPage(){
+    this.router.navigate(['/member']);
   }
-
-  itemListPage(){
-    this.router.navigate(['/itemList']);
-  }
-
 }

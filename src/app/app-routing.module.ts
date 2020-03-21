@@ -5,6 +5,8 @@ import { MemberComponent } from './member/member.component';
 import { LoadingPageComponent } from './loading-page/loading-page.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ItemListComponent } from './item-list/item-list.component';
+import { ItemInfoComponent } from './item-info/item-info.component';
 
 
 const routes: Routes = [
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path : "member" , component : MemberComponent},
   {path : "login" , component : LoginComponent},
   {path : "register" , component : RegisterComponent},
+  {path : "itemList" , component : ItemListComponent},
+  {path : "itemInfo" , component : ItemInfoComponent},
 ];
 
 @NgModule({
