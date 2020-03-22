@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ItemListComponent implements OnInit {
 
-
+  
   constructor(public api : ServicesService, private router: Router) {
     
    }
@@ -25,5 +25,10 @@ export class ItemListComponent implements OnInit {
 
   membersPage(){
     this.router.navigate(['/member']);
+  }
+
+  search(){
+    var name = (<HTMLInputElement>document.getElementById("search")).value; 
+    this.api.searchAqar(name);
   }
 }
