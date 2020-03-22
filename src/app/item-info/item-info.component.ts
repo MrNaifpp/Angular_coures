@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../services.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-item-info',
@@ -9,9 +9,18 @@ import { Router } from '@angular/router';
 })
 export class ItemInfoComponent implements OnInit {
 
-  constructor(public api : ServicesService, private router: Router) { }
+   username;
+  constructor(public api : ServicesService, private router: Router,private route : ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.route.params.subscribe(params => {
+      // get the username out of the route params
+      this.username = params['name'];
+      console.log(this.username)
+  
+      // now we can go grab user data from github    
+    })
   }
 
   itemListPage(){
