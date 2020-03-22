@@ -23,7 +23,7 @@ const routes: Routes = [
   {path : "reminder" , component : ReminderComponent},
   {path : "myItems" , component : MyItemsComponent},
   {path : "setReminder" , component : SetReminderComponent},
-  {path : "member/:name" , component : TestgetComponent},
+  {path : "itemList/:name" , component : ItemInfoComponent},
 
 ];
 

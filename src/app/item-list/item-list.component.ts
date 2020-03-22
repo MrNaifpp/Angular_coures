@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../services.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { aqar } from '../models/models';
 
 @Component({
@@ -11,7 +11,9 @@ import { aqar } from '../models/models';
 export class ItemListComponent implements OnInit {
 
   
-  constructor(public api : ServicesService, private router: Router) {
+  name;
+
+  constructor(private router2:ActivatedRoute, public api : ServicesService, private router: Router) {
     
    }
    listOfAqar :aqar[] = []
@@ -19,6 +21,11 @@ export class ItemListComponent implements OnInit {
   //  searched:boolean = true;
 
   async ngOnInit() {
+
+    this.router2.params.subscribe(parameter => {
+      this.name = parameter['item'];
+      console.log(parameter['item'])
+    })
 
      this.listOfAqar  = await this.api.pullAqars();
       console.log(this.listOfAqar);
