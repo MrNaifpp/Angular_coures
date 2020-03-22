@@ -19,17 +19,17 @@ export class LoginComponent implements OnInit {
   error: any;
   user: user= new user();
   isLogIn:any;
-  constructor(public myAuth :AngularFireAuth, public api : ServicesService,private httpClient: HttpClient ) {    
+  constructor(public myAuth :AngularFireAuth, public api : ServicesService,private httpClient: HttpClient ,public router:Router ) {    
   }
 
   ngOnInit() {
-    // this.myAuth.auth.onAuthStateChanged(firebase => { 
-    //   if(firebase){
-    //     this.router.navigate(["/member"]);
-    //     console.log(firebase.email) ;
-    //     this.isLogIn=firebase;
-    //   }
-    // });
+
+    this.myAuth.auth.onAuthStateChanged(firebase => { 
+      if(firebase){
+        this.router.navigate(["/member"]);
+        this.isLogIn=firebase;
+      }
+    });
     
   }
 

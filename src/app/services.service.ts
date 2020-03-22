@@ -148,13 +148,7 @@ export class ServicesService {
               this.searchedAqar.description=doc.data().description;
              
           })
-        }).then(succes => {
-          if(this.searchedAqar.name==''){
-            alert("no such Aqar with this name")
-          }else{
-            console.log(this.searchedAqar);
             return this.searchedAqar;
-          }
         }).catch(err =>{
           alert(err)
         })
@@ -274,6 +268,7 @@ export class ServicesService {
   }
   signInAsGuset(){
     this.myAuth.auth.signInAnonymously().then(succes => {
+      alert("Thank you for joining us")
       this.router.navigate(['member'])
     });
   }
