@@ -1,8 +1,18 @@
-<p>member works!</p>
-<button (click)="signout()" >signOut</button>
-
-<button (click)="addRemainder()" >addRemainde</button>
-<button (click)="pullMyHistory()" >pullMyHistory</button>
-<button (click)="pullMyRemainders()" >pullMyRemainders</button>
-
-
+<html>
+    <head>
+    </head>
+    <body>
+        <div id='container'>
+            <div (click)="logOut()" id='backBTNposition' >
+                <button id='backBTN'><img src='assets\img\logout.png' id='icon'></button>
+            </div>
+            <div id='BTNholder'>
+            <button (click)="itemListPage()" class='BTNstyle'>قائمة الادوية</button>
+            <button (click)="remindersPage()" class='BTNstyle' >قائمة التذكير</button>
+            </div>
+            <div id='thirdBTN'>
+            <button (click)="myItemsPage()" class='BTNstyle'>تاريخ ادويتي</button>
+            </div>
+        </div>
+    </body>
+</html>

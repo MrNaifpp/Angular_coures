@@ -33,7 +33,9 @@ export class LoginComponent implements OnInit {
     
   }
 
-
+  signUpPage(){
+    this.router.navigate(['/register']);
+  }
 
   logIn(){
     var email = (<HTMLInputElement>document.getElementById("email")).value;
@@ -46,6 +48,7 @@ export class LoginComponent implements OnInit {
   }
 
 
+
   signUp(){
 
     var mail = (<HTMLInputElement>document.getElementById("email")).value;
@@ -56,6 +59,8 @@ export class LoginComponent implements OnInit {
 
     this.api.signUp(signUpuser);
   }
+
+
 
   logOut(){
     this.api.logOut();    

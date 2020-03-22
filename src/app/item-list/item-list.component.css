@@ -3,8 +3,6 @@
     margin: 0pt;
 }
 
-
-
 body{
     background-color: #2AFC62;
     width: 100%;
@@ -14,6 +12,7 @@ body{
 
 #backBTN{
     border-style: solid;
+    border-radius: 30pt;
     border-width: 1pt;
     width: 40pt;
     height: 30pt;
@@ -25,39 +24,54 @@ body{
     text-align: center;
 }
 
-.BTNstyle{
-    border-radius: 30pt;
-    border-style: solid;
-    border-width: 1pt;
-    width: 100pt;
-    height: 50pt;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: dimgray;
-    cursor: pointer;
-    font-size: 15pt;
-    font-weight: bold;
-    text-align: center;
-    margin: 10pt;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#BTNholder{
-    margin-top: 180pt;
-    text-align: center;
-}
-
-#thirdBTN{
-    text-align: center;
-}
-
 #backBTNposition{
     padding-top: 15pt;
     margin-left: 190pt;
 }
 
+#greetings{
+    font-size: 50pt;
+    font-weight: bold;
+    color: dimgray;
+    text-align: center;
+    position: relative;
+    top: 0pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#search{
+    background-color: rgb(0, 0, 0, 0.1);
+    direction: rtl;
+    margin-left: 5pt;
+    border-radius: 20pt;
+}
+
+#searchPosition{
+    text-align: center;
+}
+
+#scroll{
+    margin: 10pt;
+    width: auto;
+    height: 400pt;
+    overflow: auto;
+}
+
+#items{
+    text-align: center;
+    margin: 5pt;
+    background-color: white;
+    border-radius: 20pt;
+    border-style: solid;
+    border-width: 1pt;
+    cursor: pointer;
+}
+
+
+
 #container{
     margin-top: 80pt;
-    width: 260pt;
+    width: 250pt;
     margin-left: auto;
     margin-right: auto;
     width: intrinsic;           /* Safari/WebKit uses a non-standard name /
@@ -68,16 +82,31 @@ body{
     border-radius: 10pt;
     height: 600pt;
 }
-#icon{
-    float: right;
-    width: 20pt;
-    margin-right: 7pt;
-}
 
 
 
 
-/*========================================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*==================================for phones============================*/
 
 
 
@@ -95,14 +124,15 @@ body{
     width: auto;
     }
     #backBTN{
+        border-radius: 70pt;
         border-style: solid;
-        border-width: 1pt;
-        width: 40pt;
-        height: 30pt;
+        border-width: 1.5pt;
+        width: 50pt;
+        height: 40pt;
         background-color: rgba(255, 255, 255, 0.2);
         color: dimgray;
         cursor: pointer;
-        font-size: 15pt;
+        font-size: 20pt;
         font-weight: bold;
         text-align: center;
     }
@@ -110,20 +140,31 @@ body{
         padding-top: 20pt;
         margin-left: 220pt;
     }
-    .BTNstyle{
-        border-radius: 30pt;
-        border-style: solid;
-        border-width: 1pt;
-        width: 100pt;
-        height: 50pt;
-        background-color: rgba(255, 255, 255, 0.2);
-        color: dimgray;
-        cursor: pointer;
-        font-size: 15pt;
-        font-weight: bold;
-        text-align: center;
-        margin: 10pt;
-        font-family: Arial, Helvetica, sans-serif;
+    #search{
+        background-color: rgb(0, 0, 0, 0.1);
+        direction: rtl;
+        margin-left: 5pt;
+        border-radius: 20pt;
     }
     
+    #searchPosition{
+        text-align: center;
+    }
+    
+    #scroll{
+        margin: 10pt;
+        width: auto;
+        height: 400pt;
+        overflow: auto;
+    }
+    
+    #items{
+        text-align: center;
+        margin: 5pt;
+        background-color: white;
+        border-radius: 20pt;
+        border-style: solid;
+        border-width: 1pt;
+        cursor: pointer;
+    }
   }

@@ -1,0 +1,53 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id='container'>
+            <div (click)="membersPage()" id='backBTNposition' >
+                <button id='backBTN'>></button>
+            </div>
+            <br>
+            <div>
+                <p id='greetings'>قائمة التذكير</p>
+            </div>
+            <div (click)="setReminder()" id='addReminderContainer'>
+                <img src='assets\img\reminder.png' id='icon'>
+                <p id='addRemider'>ضافة الى قائمة التذكير</p>
+            </div>
+            
+            <div id='remindersContainer'>
+                <div id='reminders'>
+                    <div id='titleAndIconContainer'>
+                        <img (click)="deleteReminder()" src='assets\img\close.png' id='moreInfoIcon'>
+                        <p id='reminderTitle'>التذكير الاول</p>
+                    </div>
+                    <div id='rows'>
+                        <div class='date'>السبت</div>
+                        <div class='date'>6:00 مساء</div>
+                    </div>
+                </div>
+                <div id='reminders'>
+                    <div id='titleAndIconContainer'>
+                        <img (click)="deleteReminder()" src='assets\img\close.png' id='moreInfoIcon'>
+                        <p id='reminderTitle'>التذكير الاول</p>
+                    </div>
+                    <div id='rows'>
+                        <div class='date'>السبت</div>
+                        <div class='date'>6:00 مساء</div>
+                    </div>
+                </div>
+                <div id='reminders'>
+                    <div id='titleAndIconContainer'>
+                        <img (click)="deleteReminder()" src='assets\img\close.png' id='moreInfoIcon'>
+                        <p id='reminderTitle'>التذكير الاول</p>
+                    </div>
+                    <div id='rows'>
+                        <div class='date'>السبت</div>
+                        <div class='date'>6:00 مساء</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

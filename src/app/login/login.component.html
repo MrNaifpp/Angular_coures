@@ -3,49 +3,41 @@
 
     </head>
     <body>
-       
-        <form *ngIf="!isLogedIn">
-            <input type="email" id="email" ><br>
-            <input  type="password" id="password"><br>
-            <button (click)="logIn()">
-                logIn
-            </button>
-            <button (click) ="signUp()">
-                sign up
-            </button>
-            <button (click) ="logOut()"> 
-                logout
-            </button>
-            <button (click) ="addAqar()"> 
-                add Aqar
-            </button>
-            <button (click) ="pullAllAqars()
-            "> 
-            pullAllAqars
-            </button>
-            <button (click) =" searchAqar()
-            "> 
-            searchAqar
-            </button>
-            <button (click) ="addRemainder()
-            "> 
-            addRemainder
-            </button>
-            <button  (click) ="details()
-            "> 
-            <a routerLink="/member/naif">details</a>
-            
-            </button>
-            <button (click) =" signUpAno()
-            "> 
-            as gust
-            </button>
-           
-           
+        <div id='container'>
+            <form>
+                <p id='greetings'>مرحبا</p>
+                <div class='grid-container'>
+                    <div id='userInput'>
+                        <input type="email" id="email">
+                    </div>
 
-            
-        </form>
+                    <div id='userInput'>
+                        <p id='text'>:ايميل</p>
+                    </div>
 
-
+                    <div id='userInput'> 
+                        <input  type="password" id="password">
+                    </div>
+                
+                    <div id='userInput'>
+                        <p id='text'>:كلمة المرور</p>
+                    </div>
+                </div>
+                <div id='userInput'> 
+                        <button (click)="logIn()" id='loginBTN'>
+                            تسجيل دخول
+                        </button>
+                        <br>
+                        <a (click) ="signUpPage()" id='signupBTN' class='btn'>
+                            تسجيل جديد
+                        </a>
+                        <br>
+                        
+                        <a (click) ="signInGuest()" id='logoutBTN' class='btn'>
+                            الدخول كضيف
+                        </a>
+                </div>
+            </form>
+        </div>
     </body>
 </html>

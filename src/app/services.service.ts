@@ -26,9 +26,6 @@ export class ServicesService {
     
   }
 
-
-
-
   signUp (User:user){
     this.newUser=User;
     
@@ -75,8 +72,9 @@ export class ServicesService {
 
       return this.myAuth.auth.signOut().then(succes =>{
         alert("you have signOut");
+
         this.newUser=null;
-        this.router.navigate(["/"]);
+        this.router.navigate(["/login"]);
       }
         ).catch(fail =>{alert( fail)})
           

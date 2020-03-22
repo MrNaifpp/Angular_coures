@@ -1,0 +1,66 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id='container'>
+            <form>
+                <div (click)="logInPage()" id='backBTNposition'>
+                    <button id='backBTN'>></button>
+                </div>
+                <p id='greetings'>انشاء حساب جديد</p>
+                <div class='grid-container'>
+                    <div id='alignmentOfGrid'>
+                        <input type="text" id="name" class='userInput'>
+                    </div>
+
+                    <div id='alignmentOfGrid'>
+                        <p id='text'>:اسم المستخدم</p>
+                    </div>
+
+                    <div id='alignmentOfGrid'> 
+                        <input  type="email" id="email" class='userInput'>
+                    </div>
+                
+                    <div id='alignmentOfGrid'>
+                        <p id='text'>:البريد الالكتروني</p>
+                    </div>
+                    <div id='alignmentOfGrid'>
+                        <input type="text" id="phone" class='userInput'>
+                    </div>
+
+                    <div id='alignmentOfGrid'>
+                        <p id='text'>:رقم الجوال</p>
+                    </div>
+
+                    <div id='alignmentOfGrid'> 
+                        <input  type="password" id="password" class='userInput'>
+                    </div>
+                
+                    <div id='alignmentOfGrid'>
+                        <p id='text'>:كلمة المرور</p>
+                    </div>
+                    <div id='alignmentOfGrid'>
+                        <input type="password" id="re-password" class='userInput'>
+                    </div>
+
+                    <div id='alignmentOfGrid'>
+                        <p id='text'>:تاكيد كلمة المرور</p>
+                    </div>
+                    <div id='alignmentOfGrid'>
+                        <!--to correct the grid placement of items-->
+                    </div>
+                    <div id='alignmentOfGrid' (click)='logInPage()' style="cursor: pointer;">
+                        <p id='toLoginLink'>هل لديك حساب مسبقا؟</p>
+                    </div>
+                </div>
+                <br><br>
+                <div id='alignmentOfGrid'> 
+                        <button (click)="signUp()" id='loginBTN'>
+                            تسجيل 
+                        </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

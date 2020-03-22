@@ -11,13 +11,27 @@ import { environment } from 'src/environments/environment';
 import { MemberComponent } from './member/member.component';
 import {HttpClientModule} from '@angular/common/http';
 import { TestgetComponent } from './testget/testget.component';
+import { LoadingPageComponent } from './loading-page/loading-page.component';
+import { RegisterComponent } from './register/register.component';
+import { ItemListComponent } from './item-list/item-list.component';
+import { ItemInfoComponent } from './item-info/item-info.component';
+import { ReminderComponent } from './reminder/reminder.component';
+import { MyItemsComponent } from './my-items/my-items.component';
+import { SetReminderComponent } from './set-reminder/set-reminder.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MemberComponent,
-    TestgetComponent
+    TestgetComponent,
+    LoadingPageComponent,
+    RegisterComponent,
+    ItemListComponent,
+    ItemInfoComponent,
+    ReminderComponent,
+    MyItemsComponent,
+    SetReminderComponent
   ],
   imports: [
     BrowserModule,

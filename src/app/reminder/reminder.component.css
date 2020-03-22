@@ -1,0 +1,268 @@
+*{
+    padding: 0pt;
+    margin: 0pt;
+}
+
+body{
+    background-color: #2AFC62;
+    width: 100%;
+    height: 100vh;
+    position:absolute; top:0; bottom:0; right:0; left:0;
+}
+
+#backBTN{
+    border-style: solid;
+    border-radius: 30pt;
+    border-width: 1pt;
+    width: 40pt;
+    height: 30pt;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: dimgray;
+    cursor: pointer;
+    font-size: 15pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+#backBTNposition{
+    padding-top: 15pt;
+    margin-left: 190pt;
+}
+
+#greetings{
+    font-size: 50pt;
+    font-weight: bold;
+    color: dimgray;
+    text-align: center;
+    position: relative;
+    top: 0pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#reminders{
+    text-align: center;
+    margin: 10pt;
+    background-color: white;
+    border-radius: 20pt;
+    border-style: solid;
+    border-width: 1pt;
+    height: auto;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+#rows{
+    display: grid;
+    grid-template-columns: auto auto;
+    direction: rtl;
+    margin-bottom: 10pt;
+}
+
+#addReminderContainer{
+    margin: 30pt;
+    margin-top: 40pt;
+    cursor: pointer;
+}
+#addRemider{
+    direction: rtl;
+    width: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: dimgray;
+    font-size: 20pt;
+    bottom: 3pt;
+    position: relative;
+    margin-left: 10pt;
+    font-weight: bold;
+}
+#icon{
+    float: right;
+    width: 20pt;
+}
+
+#titleAndIconContainer{
+    text-align: center;
+    margin-top: 15pt;
+    margin-right: 10pt;
+}
+#reminderTitle{
+    direction: rtl;
+    width: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: dimgray;
+    text-align: center;
+    font-size: 20pt;
+    bottom: 6pt;
+    position: relative;
+    margin-left: 35pt;
+    max-width: 180pt;
+}
+#moreInfoIcon{
+    float: right;
+    width: 15pt;
+}
+
+.date{
+    font-size: 15pt;
+    color: dimgray;
+}
+#remindersContainer{
+    width: auto;
+    height: 350pt;
+    overflow: auto;    
+}
+
+#container{
+    margin-top: 80pt;
+    width: 250pt;
+    margin-left: auto;
+    margin-right: auto;
+    width: intrinsic;           /* Safari/WebKit uses a non-standard name /
+    width: -moz-max-content;    / Firefox/Gecko /
+    width: -webkit-max-content; / Chrome */
+    padding-bottom: 30vh;
+    background-color: rgb(0, 0, 0, 0.05);
+    border-radius: 10pt;
+    height: 600pt;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*==================================for phones============================*/
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    body{
+        background-color: #2AFC62;
+        width: 100%;
+        height: 100%;
+    }
+    #container{
+    margin: 0;
+    background-color: rgb(0, 0, 0, 0);
+    width: auto;
+    }
+    #backBTN{
+        border-radius: 70pt;
+        border-style: solid;
+        border-width: 1.5pt;
+        width: 50pt;
+        height: 40pt;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: dimgray;
+        cursor: pointer;
+        font-size: 20pt;
+        font-weight: bold;
+        text-align: center;
+    }
+    #backBTNposition{
+        padding-top: 20pt;
+        margin-left: 220pt;
+    }
+    #greetings{
+        font-size: 50pt;
+        font-weight: bold;
+        color: dimgray;
+        text-align: center;
+        position: relative;
+        top: 0pt;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #reminders{
+        text-align: center;
+        margin: 10pt;
+        background-color: white;
+        border-radius: 20pt;
+        border-style: solid;
+        border-width: 1pt;
+        height: auto;
+        cursor: pointer;
+        display: grid;
+        grid-template-columns: auto;
+    }
+    
+    #rows{
+        display: grid;
+        grid-template-columns: auto auto;
+        direction: rtl;
+        margin-bottom: 10pt;
+    }
+    
+    #addReminderContainer{
+        margin: 30pt;
+        margin-top: 40pt;
+        cursor: pointer;
+    }
+    #addRemider{
+        direction: rtl;
+        width: auto;
+        font-family: Arial, Helvetica, sans-serif;
+        color: dimgray;
+        font-size: 20pt;
+        bottom: 3pt;
+        position: relative;
+        margin-left: 20pt;
+        font-weight: bold;
+    }
+    #icon{
+        float: right;
+        width: 20pt;
+        margin-right: 20pt;
+    }
+    
+    #titleAndIconContainer{
+        text-align: center;
+        margin-top: 15pt;
+        margin-right: 10pt;
+    }
+    #reminderTitle{
+        direction: rtl;
+        width: auto;
+        font-family: Arial, Helvetica, sans-serif;
+        color: dimgray;
+        text-align: center;
+        font-size: 20pt;
+        bottom: 6pt;
+        position: relative;
+        margin-left: 10pt;
+    }
+    #moreInfoIcon{
+        float: right;
+        width: 15pt;
+    }
+    
+    .date{
+        font-size: 15pt;
+        color: dimgray;
+    }
+    #remindersContainer{
+        width: auto;
+        height: 350pt;
+        overflow: auto;    
+    }
+  }

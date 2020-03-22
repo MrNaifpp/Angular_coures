@@ -1,0 +1,34 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id='container'>
+            <div (click)="itemListPage()" id='backBTNposition' >
+                <button id='backBTN'>></button>
+            </div>
+            <div id='itemInfoContainer'>
+                <div id='imgContainer'><img src='assets\img\pic.png' id='itemImg'></div>
+                <div id='textContainer'>
+                    <h3 id='text'>طريقة الاستعمال:</h3>
+                    <p id='text'>يوضع على منطقه الألم ويدلك لمدة 2-4 دقائق.</p>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div id='textContainer'>
+                    <h3 id='text'>السعر:</h3>
+                    <br>
+                    <br>
+                    <p id='text'>10 ريال.</p>
+                </div>
+                <div (click)="setReminder()" id='reminderContainer'>
+                    <i class="fa fa-plus" id='icon'></i>
+                    <p id='remider'>ضافة الى قائمة التذكير</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

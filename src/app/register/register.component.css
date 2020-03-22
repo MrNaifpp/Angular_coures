@@ -12,12 +12,31 @@ body{
     position:absolute; top:0; bottom:0; right:0; left:0;
 }
 #greetings{
-    font-size: 80pt;
+    font-size: 30pt;
+    font-weight: bold;
     color: dimgray;
     text-align: center;
     position: relative;
-    top: 100pt;
+    top: 70pt;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+#backBTN{
+    border-radius: 70pt;
+    border-style: solid;
+    border-width: 1.5pt;
+    width: 50pt;
+    height: 40pt;
+    background-color: lightgreen;
+    color: dimgray;
+    cursor: pointer;
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+}
+#backBTNposition{
+    padding-top: 20pt;
+    margin-left: 190pt;
 }
 
 #container{
@@ -28,7 +47,7 @@ body{
     width: intrinsic;           /* Safari/WebKit uses a non-standard name /
     width: -moz-max-content;    / Firefox/Gecko /
     width: -webkit-max-content; / Chrome */
-    padding-bottom: 30vh;
+    padding-bottom: 22vh;
     background-color: rgb(0, 0, 0, 0.05);
     border-radius: 10pt;
     height: 600pt;
@@ -40,12 +59,11 @@ body{
     border-width: 1.5pt;
     width: 100pt;
     height: 60pt;
-    margin-top: 30pt;
+    margin-top: 0pt;
     margin-bottom: 30pt;
     background-color: lightgreen;
     color: dimgray;
     cursor: pointer;
-    font-weight: bold;
 }
 
 #signupBTN, #logoutBTN{
@@ -53,16 +71,18 @@ body{
     font-size: 13pt;
 }
 
-#userInput{
+#alignmentOfGrid{
     text-align: center;
     position: relative;
-    top: 200pt;
-    margin: 5pt;
+    top: 150pt;
+    margin:
+     5pt;
 }
 
-#email, #password{
+.userInput{
     border-style: groove;
     border-radius: 8pt;
+    margin-left: 10pt;
 }
 
 #text{
@@ -71,12 +91,30 @@ body{
     margin-right: 10pt;
     font-family: Arial, Helvetica, sans-serif;
     color: dimgray;
+    margin-right: 30pt;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 110pt;
   }
+
+#toLoginLink{
+    color: white;
+    font-size: 12pt;
+    margin-right: 20pt;
+    position: absolute;
+    width: max-content;
+    right: 20pt;
+    font-size: 20pt;
+  }
+
+
+
+
+/*====================================================================*/
+
+
 
 
 @media only screen and (max-width: 600px) {
@@ -86,12 +124,29 @@ body{
         height: 100%;
     }
     #greetings{
-        font-size: 80pt;
+        font-size: 30pt;
         color: dimgray;
         text-align: center;
         position: relative;
-        top: 120pt;
+        top: 70pt;
         font-family: Arial, Helvetica, sans-serif;
+    }
+    #backBTN{
+        border-radius: 70pt;
+        border-style: solid;
+        border-width: 1.5pt;
+        width: 50pt;
+        height: 40pt;
+        background-color: lightgreen;
+        color: dimgray;
+        cursor: pointer;
+        font-size: 20pt;
+        font-weight: bold;
+        text-align: center;
+    }
+    #backBTNposition{
+        padding-top: 20pt;
+        margin-left: 220pt;
     }
     #userInput{
         text-align: center;
@@ -100,30 +155,46 @@ body{
         margin-left: 20pt;
     }
     #text{
-        width: auto;
+        width: fit-content;
         color: dimgray;
         font-size: 14pt;
-        margin-right: 0;
+        margin-right: 0pt;
+        padding-right: 0pt;
         border-radius: 2%;
         font-family: Arial, Helvetica, sans-serif;
-        
+        right: 10pt;
+        position: relative;
     }
-    #email, #password{
+    .userInput{
         border-style: groove;
         border-radius: 8pt;
-        width: 150pt;
+        margin-left: 10pt;
+    }
+    #alignmentOfGrid{
+        text-align: center;
+        position: relative;
+        top: 150pt;
     }
     .grid-container {
         display: grid;
-        grid-template-columns: max-content max-content;
+        grid-template-columns: auto auto;
         grid-gap: 10pt;
     }
+    #toLoginLink{
+        color: white;
+        font-size: 12pt;
+        margin-right: 20pt;
+        position: absolute;
+        width: max-content;
+        right: 5pt;
+        font-size: 15pt;
+      }
 
     #container{
-    margin: 0;
-    background-color: rgb(0, 0, 0, 0);
-    width: auto;
-}
+        margin: 0;
+        background-color: rgb(0, 0, 0, 0);
+        width: auto;
+    }
 
     #loginBTN{
         border-radius: 70pt;
@@ -131,15 +202,10 @@ body{
         border-width: 1.5pt;
         width: 100pt;
         height: 60pt;
-        margin-top: 30pt;
+        margin-top: 0pt;
         margin-bottom: 30pt;
         background-color: lightgreen;
         color: dimgray;
         cursor: pointer;
-    }
-    
-    #signupBTN, #logoutBTN{
-        color: white;
-        font-size: 13pt;
     }
   }

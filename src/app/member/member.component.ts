@@ -13,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MemberComponent implements OnInit {
 
+
   isLogIn;
   CurrentUser;
   name;
@@ -70,5 +71,19 @@ export class MemberComponent implements OnInit {
   }
 
 
+  logOut(){
+    this.api.logOut();    
   }
+
+  remindersPage(){
+    this.router.navigate(['/reminder']);
+  }
+  itemListPage(){
+    this.router.navigate(['/itemList']);
+  }
+  myItemsPage(){
+    this.router.navigate(['/myItems']);
+  }
+
+}
 
