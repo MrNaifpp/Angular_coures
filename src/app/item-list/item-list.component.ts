@@ -12,7 +12,6 @@ export class ItemListComponent implements OnInit {
 
   
   name;
-
   constructor(private router2:ActivatedRoute, public api : ServicesService, private router: Router) {
     
    }
@@ -42,16 +41,17 @@ export class ItemListComponent implements OnInit {
   search(){
     //check the content then send it ====================================================
     var x = document.getElementById("scroll");
+    var y = document.getElementById("searchedItem");
+    var name = (<HTMLInputElement>document.getElementById("search")).value; 
+    let item = this.api.searchAqar(name);
+    
     if (x.style.display === "block") {
       x.style.display = "none";
-      var name = (<HTMLInputElement>document.getElementById("search")).value; 
-      let item = this.api.searchAqar(name);
-      var y = document.getElementById("searchedItem");
       y.style.display = "block";
     }
     else {
-      x.style.display = "block";
       y.style.display = "none";
+      x.style.display = "block";
     }
   }
 }
