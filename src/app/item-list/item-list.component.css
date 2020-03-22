@@ -56,6 +56,12 @@ body{
     height: 400pt;
     overflow: auto;
 }
+#searchedItem{
+    margin: 10pt;
+    width: auto;
+    height: 400pt;
+    overflow: auto;
+}
 
 #items{
     text-align: center;

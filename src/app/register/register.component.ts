@@ -17,10 +17,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-
-
-
-
   logInPage(){
     this.router.navigate(['/login']);
   }
@@ -37,7 +33,7 @@ export class RegisterComponent implements OnInit {
     this.user.email= mail;
     this.user.phone= phone;
     this.user.password=password;
-    //make sure the passwords are the same
+    //make sure the passwords are the same===================================================
     this.api.signUp(this.user);
   }
 

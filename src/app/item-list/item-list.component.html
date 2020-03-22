@@ -14,8 +14,14 @@
                 <i class="fa fa-search" (click)="search()"></i><input placeholder='  بحث' id='search' type='text'>
             </div>
             
-            <div id='scroll'>
-                <div  *ngFor="let aqar of listOfAqar" (click)="itemInfo()" id='items'  >
+            <div id='scroll' style='display: block'>
+                <div  *ngFor="let aqar of listOfAqar" (click)="itemInfo()" id='items'>
+                    {{ aqar.name }}
+                </div>
+                
+            </div>
+            <div id='searchedItem' style='display: none'>
+                <div  *ngFor="let aqar of item" (click)="itemInfo()" id='items'>
                     {{ aqar.name }}
                 </div>
                 

@@ -15,9 +15,11 @@ export class ItemListComponent implements OnInit {
     
    }
    listOfAqar :aqar[] = []
+   item : String;
   //  searched:boolean = true;
 
   async ngOnInit() {
+
      this.listOfAqar  = await this.api.pullAqars();
       console.log(this.listOfAqar);
   }
@@ -31,7 +33,18 @@ export class ItemListComponent implements OnInit {
   }
 
   search(){
-    var name = (<HTMLInputElement>document.getElementById("search")).value; 
-    this.api.searchAqar(name);
+    //check the content then send it ====================================================
+    var x = document.getElementById("scroll");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+      var name = (<HTMLInputElement>document.getElementById("search")).value; 
+      let item = this.api.searchAqar(name);
+      var y = document.getElementById("searchedItem");
+      y.style.display = "block";
+    }
+    else {
+      x.style.display = "block";
+      y.style.display = "none";
+    }
   }
 }
