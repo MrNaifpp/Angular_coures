@@ -88,4 +88,7 @@ export class LoginComponent implements OnInit {
     this.api.signInAsGuset();
   }
 
+  guest(){
+    this.api.signInAsGuset();
+  }
 }
