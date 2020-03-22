@@ -33,9 +33,7 @@ export class LoginComponent implements OnInit {
     
   }
 
-  signUpPage(){
-    this.router.navigate(['/register']);
-  }
+  
 
   logIn(){
     var email = (<HTMLInputElement>document.getElementById("email")).value;
