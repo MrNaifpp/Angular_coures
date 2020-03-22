@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { ItemInfoComponent } from './item-info/item-info.component';
+import { ReminderComponent } from './reminder/reminder.component';
+import { MyItemsComponent } from './my-items/my-items.component';
+import { SetReminderComponent } from './set-reminder/set-reminder.component';
 
 
 const routes: Routes = [
@@ -16,6 +19,9 @@ const routes: Routes = [
   {path : "register" , component : RegisterComponent},
   {path : "itemList" , component : ItemListComponent},
   {path : "itemInfo" , component : ItemInfoComponent},
+  {path : "reminder" , component : ReminderComponent},
+  {path : "myItems" , component : MyItemsComponent},
+  {path : "setReminder" , component : SetReminderComponent},
 ];
 
 @NgModule({

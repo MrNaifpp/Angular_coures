@@ -18,8 +18,14 @@ export class MemberComponent implements OnInit {
     this.api.logOut();    
   }
 
+  remindersPage(){
+    this.router.navigate(['/reminder']);
+  }
   itemListPage(){
     this.router.navigate(['/itemList']);
+  }
+  myItemsPage(){
+    this.router.navigate(['/myItems']);
   }
 
 }

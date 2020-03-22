@@ -3,21 +3,22 @@ import { ServicesService } from '../services.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-item-info',
-  templateUrl: './item-info.component.html',
-  styleUrls: ['./item-info.component.css']
+  selector: 'app-reminder',
+  templateUrl: './reminder.component.html',
+  styleUrls: ['./reminder.component.css']
 })
-export class ItemInfoComponent implements OnInit {
+export class ReminderComponent implements OnInit {
 
   constructor(public api : ServicesService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  itemListPage(){
-    this.router.navigate(['/itemList']);
+  membersPage(){
+    this.router.navigate(['/member']);
   }
   setReminder(){
     this.router.navigate(['/setReminder']);
   }
+
 }

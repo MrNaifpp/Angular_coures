@@ -3,7 +3,7 @@
     </head>
     <body>
         <div id='container'>
-            <div (click)="membersPage()" id='backBTNposition' >
+            <div (click)="itemListPage()" id='backBTNposition' >
                 <button id='backBTN'>></button>
             </div>
             <div id='itemInfoContainer'>
@@ -24,7 +24,7 @@
                     <br>
                     <p id='text'>10 ريال.</p>
                 </div>
-                <div id='reminderContainer'>
+                <div (click)="setReminder()" id='reminderContainer'>
                     <i class="fa fa-plus" id='icon'></i>
                     <p id='remider'>ضافة الى قائمة التذكير</p>
                 </div>

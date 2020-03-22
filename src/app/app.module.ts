@@ -13,6 +13,9 @@ import { LoadingPageComponent } from './loading-page/loading-page.component';
 import { RegisterComponent } from './register/register.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { ItemInfoComponent } from './item-info/item-info.component';
+import { ReminderComponent } from './reminder/reminder.component';
+import { MyItemsComponent } from './my-items/my-items.component';
+import { SetReminderComponent } from './set-reminder/set-reminder.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { ItemInfoComponent } from './item-info/item-info.component';
     LoadingPageComponent,
     RegisterComponent,
     ItemListComponent,
-    ItemInfoComponent
+    ItemInfoComponent,
+    ReminderComponent,
+    MyItemsComponent,
+    SetReminderComponent
   ],
   imports: [
     BrowserModule,
