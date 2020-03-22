@@ -8,6 +8,7 @@ body{
     width: 100%;
     height: 100vh;
     position:absolute; top:0; bottom:0; right:0; left:0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #container{
     margin-top: 80pt;
@@ -45,11 +46,8 @@ body{
     font-size: 20pt;
     font-weight: bold;
     color: dimgray;
-    text-align: center;
-    position: relative;
-    top: 0pt;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 20pt;
+    text-align: center;    
+    margin-top: 40pt;
 }
 #ContainerWhite{
     text-align: center;
@@ -59,27 +57,54 @@ body{
     border-style: solid;
     border-width: 1pt;
     width: auto;
-    height: 430pt;
+    height: 500pt;
 }
 #newReminder{
     display: grid;
     grid-template-columns: auto auto;
-    margin-top: 70pt;
-    grid-gap: 20pt;
+    margin-top: 90pt;
+    grid-gap: 40pt;
 }
 #text{
     direction: rtl;
     width: max-content;
     float: right;
-    right: 20pt;
+    right: 40pt;
     position: relative;
+    font-size: 15pt;
+    color: dimgray;
 }
 #userInputStyle{
     margin-left: 20pt;
-    width: 150pt;
+    width: 120pt;
     background-color: rgb(107, 57, 11, 0.5);
     direction: rtl;
     border-radius: 20pt;
+}
+#addReminderContainer{
+    margin: 30pt;
+    margin-top: 100pt;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 0.5pt;
+    padding-top: 10pt;
+}
+#addRemider{
+    direction: rtl;
+    width: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: dimgray;
+    font-size: 20pt;
+    bottom: 3pt;
+    position: relative;
+    margin-left: 10pt;
+    font-weight: bold;
+    text-align: center;
+}
+#icon{
+    float: right;
+    width: 20pt;
+    margin-right: 20pt;
 }
 
 
@@ -151,5 +176,63 @@ body{
         width: auto;
         height: 350pt;
         overflow: auto;    
+    }
+    #ContainerWhite{
+        text-align: center;
+        margin: 10pt;
+        background-color: white;
+        border-radius: 50pt;
+        border-style: solid;
+        border-width: 1pt;
+        width: auto;
+        height: 500pt;
+    }
+    #newReminder{
+        display: grid;
+        grid-template-columns: auto auto;
+        margin-top: 120pt;
+        grid-gap: 20pt;
+    }
+    #text{
+        direction: rtl;
+        width: max-content;
+        float: right;
+        right: 20pt;
+        position: relative;
+        font-size: 15pt;
+        color: dimgray;
+    }
+    #userInputStyle{
+        margin-left: 10pt;
+        width: 150pt;
+        background-color: rgb(107, 57, 11, 0.5);
+        direction: rtl;
+        border-radius: 20pt;
+    }
+
+    #addReminderContainer{
+        margin: 30pt;
+        margin-top: 120pt;
+        cursor: pointer;
+        border-style: solid;
+        border-width: 0.5pt;
+        padding-top: 10pt;
+    }
+    #addRemider{
+        direction: rtl;
+        width: auto;
+        font-family: Arial, Helvetica, sans-serif;
+        color: dimgray;
+        font-size: 20pt;
+        bottom: 3pt;
+        position: relative;
+        margin-left: 10pt;
+        font-weight: bold;
+        text-align: center;
+    }
+    #icon{
+        float: right;
+        width: 20pt;
+        margin-right: 20pt;
     }
   }

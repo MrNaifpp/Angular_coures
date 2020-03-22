@@ -68,6 +68,11 @@ body{
     border-radius: 10pt;
     height: 600pt;
 }
+#icon{
+    float: right;
+    width: 20pt;
+    margin-right: 7pt;
+}
 
 
 

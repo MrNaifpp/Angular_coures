@@ -20,5 +20,8 @@ export class ReminderComponent implements OnInit {
   setReminder(){
     this.router.navigate(['/setReminder']);
   }
+  deleteReminder(){
+    
+  }
 
 }
