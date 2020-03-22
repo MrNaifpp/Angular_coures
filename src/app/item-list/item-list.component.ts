@@ -9,9 +9,14 @@ import { Router } from '@angular/router';
 })
 export class ItemListComponent implements OnInit {
 
-  constructor(public api : ServicesService, private router: Router) { }
+
+  constructor(public api : ServicesService, private router: Router) {
+    
+   }
 
   ngOnInit() {
+    let listOfAqar  = this.api.pullAqars();
+    console.log(listOfAqar);
   }
 
   itemInfo(){

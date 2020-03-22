@@ -15,28 +15,7 @@
             </div>
             
             <div id='scroll'>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
-                <div (click)="itemInfo()" id='items'>aaaaaaaa</div>
+                <div (click)="itemInfo()" id='items' *ngFor="let item of listOfAqar">{{item.name}}</div>
             </div>
 
         </div>
