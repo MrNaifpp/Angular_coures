@@ -123,18 +123,17 @@ export class ServicesService {
 
   }
   
-
+  aqars2=[];
   pullAqars(){
     this.aqars=[];
+    
     this.db.firestore.collection('aqar').get().then((snapshot)=>
       snapshot.docs.forEach(doc =>{
-        this.aqar.name=doc.data().name;
-        this.aqar.price=doc.data().price;
-        this.aqar.description=doc.data().description;
-        this.aqars.push(this.aqar);
+       this.aqars2.push(doc.data())
+        
       }))
-      console.log(this.aqars);
-      return this.aqars;
+      
+      return this.aqars2;
   }
   
   
@@ -349,9 +348,10 @@ export class ServicesService {
 
     }
 
-    getAqarInfo(Name){
+    async getAqarInfo (Name){
       let aqarInfo:aqar = new aqar();
-      this.db.firestore.collection("aqar").where("name", "==", Name)
+      console.log(Name)
+      await this.db.firestore.collection("aqar").where("name", "==", Name)
       .get()
       .then(function(querySnapshot) {
           querySnapshot.forEach(function(doc) {
@@ -361,13 +361,12 @@ export class ServicesService {
               aqarInfo.price= doc.data().price
               
           });
+          console.log(aqarInfo)
           return aqarInfo;
       })
       .catch(function(error) {
           console.log("Error getting documents: ", error);
       }); 
-
-
     }
 
 }
