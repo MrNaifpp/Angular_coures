@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../services.service';
 import { Router } from '@angular/router';
+import { aqar } from '../models/models';
 
 @Component({
   selector: 'app-item-list',
@@ -13,10 +14,12 @@ export class ItemListComponent implements OnInit {
   constructor(public api : ServicesService, private router: Router) {
     
    }
+   listOfAqar :aqar[] = []
+  //  searched:boolean = true;
 
-  ngOnInit() {
-    let listOfAqar  = this.api.pullAqars();
-    console.log(listOfAqar);
+  async ngOnInit() {
+     this.listOfAqar  = await this.api.pullAqars();
+      console.log(this.listOfAqar);
   }
 
   itemInfo(){
