@@ -5,8 +5,7 @@ import { promise } from 'protractor';
 import { observable } from 'rxjs';
 import { auth } from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { user, aqar } from './models/models';
-import { print } from 'util';
+import { user, aqar, remainder } from './models/models';
 
 
 
@@ -17,11 +16,11 @@ import { print } from 'util';
 })
 export class ServicesService {
 
-
-  user:user;
-
-  aqar:aqar= new aqar();
-  searchedAqar:aqar= new aqar();
+  
+  newUser:user;
+  addReaindUser:user;
+  aqar:aqar= new aqar("","","","");
+  searchedAqar:aqar= new aqar("","","","");
 
   constructor(public myAuth: AngularFireAuth,public db:AngularFirestore, private router: Router) {
     
@@ -31,16 +30,18 @@ export class ServicesService {
 
 
   signUp (User:user){
-    this.user=User;
+    this.newUser=User;
+    
     // additional data to DB
     this.db.firestore.collection('user Information').add({
-        username: "Naif",
-        password: this.user.password,
-        phone: "055555555",
-        email: this.user.email
+        username: this.newUser.name,
+        password: this.newUser.password,
+        phone: this.newUser.phone,
+        email: this.newUser.email,
+        
     });
     // our authanticaion
-    return this.myAuth.auth.createUserWithEmailAndPassword(this.user.email,this.user.password).then(
+    return this.myAuth.auth.createUserWithEmailAndPassword(this.newUser.email,this.newUser.password).then(
       (success) => {
         alert("Thank you for joing Us");
         this.router.navigate(['/member']);
@@ -48,7 +49,7 @@ export class ServicesService {
       } 
     ).catch(
       (failed) => {
-        return false;
+        alert(failed)
       }
     )
     
@@ -57,7 +58,10 @@ export class ServicesService {
  
   logIn (mail,password) {
     return this.myAuth.auth.signInWithEmailAndPassword(mail,password).then(
-      (success) => { 
+      async (user) => { 
+        console.log(user)
+        alert("You have LogIn")
+        await this.updateUser(mail)
         this.router.navigate(['/member']);
       } 
     ).catch(
@@ -71,6 +75,7 @@ export class ServicesService {
 
       return this.myAuth.auth.signOut().then(succes =>{
         alert("you have signOut");
+        this.newUser=null;
         this.router.navigate(["/"]);
       }
         ).catch(fail =>{alert( fail)})
@@ -79,19 +84,15 @@ export class ServicesService {
   }
 
   isLogIn(){
-
-    return this.myAuth.auth.onAuthStateChanged(firebase => {
-      if (firebase){
-        this.router.navigate(["/member"]);
-      }else{
-        this.router.navigate(["/login"]);
-      }
+    this.myAuth.auth.onAuthStateChanged(firebase => { 
+      return firebase;
     });
+    
   }
-  aqar1:aqar=new aqar();
-  aqar2:aqar=new aqar();
-  aqar3:aqar=new aqar();
-  aqar4:aqar=new aqar();
+  aqar1:aqar=new aqar("","","","");
+  aqar2:aqar=new aqar("","","","");
+  aqar3:aqar=new aqar("","","","");
+  aqar4:aqar=new aqar("","","","");
   aqars = [this.aqar1,this.aqar2,this.aqar3,this.aqar4]
 
   addaqar(){
@@ -132,7 +133,6 @@ export class ServicesService {
         this.aqar.name=doc.data().name;
         this.aqar.price=doc.data().price;
         this.aqar.description=doc.data().description;
-
         this.aqars.push(this.aqar);
       }))
       console.log(this.aqars);
@@ -148,24 +148,217 @@ export class ServicesService {
               this.searchedAqar.name = doc.data().name;
               this.searchedAqar.price = doc.data().price;
               this.searchedAqar.description=doc.data().description;
+             
           })
+        }).then(succes => {
+          if(this.searchedAqar.name==''){
+            alert("no such Aqar with this name")
+          }else{
+            console.log(this.searchedAqar);
+            return this.searchedAqar;
+          }
+        }).catch(err =>{
+          alert(err)
         })
         
-        return this.searchedAqar;
+        
   }
 
-  addReminder(aqar:aqar,time:string,date:string){
-      this.db.firestore.collection("My aqars History").add({
-        email:this.user.email,
-        aqarName:aqar.name,
-        Time:time,
-        Date:date,
+  getId(email){
+    let id:string;
+    //get id of User
+    this.db.firestore.collection('user Information').where(
+      'email','==',email).get().then((snapshot)=>{
+            snapshot.docs.forEach(doc => {
+              id=doc.id 
+            })
+      }).then(succes => {
+        console.log(id)
+        return id;
+      }).catch(err =>{
+          alert(err)
       })
   }
 
-  historyaqars(){
-   
+  async addReminder(aqar:aqar,remaindInfo:remainder){
+    let user=await this.getUser();
+    if(user ==null){
+      alert("null")
+      return;
+    }
+    // let id:string;
+    // console.log(this.getId(user));
+
+    let userId:string;
+    //get id of User
+    await this.db.firestore.collection('user Information').where(
+      'email','==',user.email).get().then((snapshot)=>{
+            snapshot.docs.forEach(doc => {
+              userId=doc.id 
+            })
+      }).catch(err =>{
+       alert(err)
+      })
+     //add Remainder to RemainderDb and HisoryAqar to HisoryDB
+      
+     this.db.firestore.collection('RemainderDb').add({
+          id:userId,
+          title: remaindInfo.title,
+          date: remaindInfo.date,
+          time: remaindInfo.time,     
+      }).then((succes)=>{
+        console.log("RemainderDb is added");
+      }).catch(err => {
+        console.log(err)
+      });
+     
+      this.db.firestore.collection('HisoryAqar').add({
+            id:userId,
+            name: aqar.name,
+            description: aqar.description,
+            price: aqar.price,
+            imgUrl: aqar.imgUrl,
+
+        }).then((succes)=>{
+             console.log("HisoryAqar is added");
+        }).catch(err => {
+        console.log(err)
+      });
+     
+      
+      alert("Remainder is Addes");
+
   }
+   async isAnonymous  (){
+    let isAnonymous:any;
+    await this.myAuth.auth.onAuthStateChanged(user =>{
+      isAnonymous = user.isAnonymous
+    });
+    return isAnonymous;
+  }
+
+ async getUser(){
+   if(this.newUser!= undefined && this.newUser!= null)
+      return this.newUser;
+   else{
+     
+    await this.myAuth.auth.onAuthStateChanged(async user => { 
+       if(user!=null){
+        await this.updateUser(user.email)
+       }
+    });
+    return this.newUser
+   }   
+      
+
+}
+  async updateUser(email){
+    
+    let currentUser= new user();
+    this.newUser = await this.db.firestore.collection('user Information').where(
+      'email','==',email).get().then((snapshot)=>{
+            
+            snapshot.docs.forEach(doc => {
+              currentUser.name=doc.data().username;
+              currentUser.phone=doc.data().phone;
+              currentUser.myHisoryAqars=doc.data().myHisoryAqars;
+              currentUser.myRemainders=doc.data().myRemainders; 
+              currentUser.password=doc.data().password;
+              currentUser.email= email; 
+            })
+            return currentUser;
+      }).catch(err =>{
+          alert(err)
+          return null;
+      })
+
+
+  }
+  signInAsGuset(){
+    this.myAuth.auth.signInAnonymously().then(succes => {
+      this.router.navigate(['member'])
+    });
+  }
+
+  async pullMyHistory(){
+    
+    
+    let currentUser:user = await this.getUser();
+    let userId;
+    let historyAqars:any=[];
+    
+    
+  
+    //get id of User
+    await this.db.firestore.collection('user Information').where(
+      'email','==',currentUser.email).get().then((snapshot)=>{
+            snapshot.docs.forEach(doc => {
+              userId=doc.id 
+            })
+            return userId;
+      }).catch(err =>{
+       alert(err)
+      })
+
+      // pull hisory recond with id
+
+
+
+      this.db.firestore.collection("HisoryAqar").where("id", "==", userId)
+      .get()
+      .then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+              // doc.data() is never undefined for query doc snapshots
+              historyAqars.push(doc.data())
+              console.log(doc.data());
+          });
+          console.log(historyAqars)
+      })
+      .catch(function(error) {
+          console.log("Error getting documents: ", error);
+      }); 
+
+        
+
+
+  }
+
+  async pullMyRemainders(){
+
+    let currentUser:user = await this.getUser();
+    let userId;
+    let remainders=[];
+
+    //get id of User
+    await this.db.firestore.collection('user Information').where(
+      'email','==',currentUser.email).get().then((snapshot)=>{
+            snapshot.docs.forEach(doc => {
+              userId=doc.id 
+            })
+            return userId;
+      }).catch(err =>{
+       alert(err)
+      })
+
+      this.db.firestore.collection("RemainderDb").where("id", "==", userId)
+      .get()
+      .then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+              // doc.data() is never undefined for query doc snapshots
+              remainders.push(doc.data())
+              console.log(doc.data());
+          });
+          console.log(remainders)
+      })
+      .catch(function(error) {
+          console.log("Error getting documents: ", error);
+      }); 
+
+  }
+
+  
+
+   
 
 
 

@@ -4,8 +4,8 @@
     </head>
     <body>
        
-        <form>
-            <input type="email" id="email"><br>
+        <form *ngIf="!isLogedIn">
+            <input type="email" id="email" ><br>
             <input  type="password" id="password"><br>
             <button (click)="logIn()">
                 logIn
@@ -27,6 +27,20 @@
             "> 
             searchAqar
             </button>
+            <button (click) ="addRemainder()
+            "> 
+            addRemainder
+            </button>
+            <button  (click) ="details()
+            "> 
+            <a routerLink="/member/naif">details</a>
+            
+            </button>
+            <button (click) =" signUpAno()
+            "> 
+            as gust
+            </button>
+           
            
 
             

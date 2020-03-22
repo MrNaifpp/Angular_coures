@@ -9,12 +9,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { environment } from 'src/environments/environment';
 import { MemberComponent } from './member/member.component';
+import {HttpClientModule} from '@angular/common/http';
+import { TestgetComponent } from './testget/testget.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MemberComponent
+    MemberComponent,
+    TestgetComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +26,7 @@ import { MemberComponent } from './member/member.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

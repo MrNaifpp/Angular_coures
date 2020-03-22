@@ -3,7 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServicesService } from '../services.service';
 import { concat } from 'rxjs';
-import { user } from '../models/models';
+import { user, aqar, remainder } from '../models/models';
+import {HttpClient} from '@angular/common/http'
+import { url } from 'inspector';
 
 
 @Component({
@@ -16,27 +18,30 @@ export class LoginComponent implements OnInit {
  
   error: any;
   user: user= new user();
-  constructor(public api : ServicesService, private router: Router) { 
-
-    
-    if(this.api.isLogIn()){
-      this.router.navigate(["/member"]);
-    }else{
-      this.router.navigate(["/"]);
-    }
-      
+  isLogIn:any;
+  constructor(public myAuth :AngularFireAuth, public api : ServicesService,private httpClient: HttpClient ) {    
   }
 
   ngOnInit() {
+    // this.myAuth.auth.onAuthStateChanged(firebase => { 
+    //   if(firebase){
+    //     this.router.navigate(["/member"]);
+    //     console.log(firebase.email) ;
+    //     this.isLogIn=firebase;
+    //   }
+    // });
+    
   }
 
 
 
   logIn(){
-    var mail = (<HTMLInputElement>document.getElementById("email")).value;
+    var email = (<HTMLInputElement>document.getElementById("email")).value;
     var password = (<HTMLInputElement>document.getElementById("password")).value;
+   
+    // this.user=new user("",email,"",password);
     
-    this.api.logIn(mail, password);
+    this.api.logIn(email, password);
 
   }
 
@@ -47,9 +52,9 @@ export class LoginComponent implements OnInit {
     var password = (<HTMLInputElement>document.getElementById("password")).value;
     this.user.email= mail;
     this.user.password=password;
-    
-    
-    this.api.signUp(this.user);
+    let signUpuser:user= new user("naif","naifali14@gmail.com","05555","123456");
+
+    this.api.signUp(signUpuser);
   }
 
   logOut(){
@@ -64,7 +69,20 @@ export class LoginComponent implements OnInit {
   }
   searchAqar(){
 
-    this.api.searchAqar("bgvbnvb");
+    this.api.searchAqar("name");
+  }
+  addRemainder(){
+    console.log(this.user.email)
+    let newAqar =new aqar("vava","jhdsfjhdjsfh","121","/sadsad");
+    let remainder2:remainder = new remainder("title","fsd","fdsd");
+
+    this.api.addReminder(newAqar,remainder2);
+  }
+  details(){
+    
+  }
+  signUpAno(){
+    this.api.signInAsGuset();
   }
 
 }
