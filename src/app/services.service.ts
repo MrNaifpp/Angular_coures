@@ -347,24 +347,27 @@ export class ServicesService {
           console.log("Error getting documents: ", error);
       }); 
 
-  }
+    }
 
-  
+    getAqarInfo(Name){
+      let aqarInfo:aqar = new aqar();
+      this.db.firestore.collection("aqar").where("name", "==", Name)
+      .get()
+      .then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+              // doc.data() is never undefined for query doc snapshots
+              aqarInfo.name= doc.data().name
+              aqarInfo.description= doc.data().description
+              aqarInfo.price= doc.data().price
+              
+          });
+          return aqarInfo;
+      })
+      .catch(function(error) {
+          console.log("Error getting documents: ", error);
+      }); 
 
-   
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
+    }
 
 }

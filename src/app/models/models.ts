@@ -41,7 +41,7 @@ export class aqar {
     public price :string; 
     public imgUrl:string;   
     
-    constructor( name,description,price,imgUrl){
+    constructor( name?,description?,price?,imgUrl?){
         this.name=name;
         this.description=description;
         this.price=price;
