@@ -345,9 +345,10 @@ export class ServicesService {
           querySnapshot.forEach(function(doc) {
               // doc.data() is never undefined for query doc snapshots
               remainders.push(doc.data())
-              console.log(doc.data());
+              remainders.push(doc.id)
+              
           });
-          console.log(remainders)
+          
       })
       .catch(function(error) {
           console.log("Error getting documents: ", error);

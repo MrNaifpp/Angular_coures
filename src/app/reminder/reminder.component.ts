@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ReminderComponent implements OnInit {
 
-  array;
+  array =[];
   constructor(public api : ServicesService, private router: Router) { }
 
   async ngOnInit() {
