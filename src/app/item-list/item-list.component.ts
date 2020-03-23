@@ -10,13 +10,13 @@ import { aqar } from '../models/models';
 })
 export class ItemListComponent implements OnInit {
 
-  
+  item;  
   name;
   constructor(private router2:ActivatedRoute, public api : ServicesService, private router: Router) {
     
    }
    listOfAqar :aqar[] = []
-   item : String;
+ 
   //  searched:boolean = true;
 
   async ngOnInit() {
@@ -43,19 +43,28 @@ export class ItemListComponent implements OnInit {
   search(){
     //check the content then send it ====================================================
     var x = document.getElementById("scroll");
-    var y = document.getElementById("searchedItem");
-    var name = (<HTMLInputElement>document.getElementById("search")).value; 
-    console.log(name);
-    let item = this.api.searchAqar(name);
-    console.log(item);
-    
-    if (x.style.display === "block") {
-      x.style.display = "none";
-      y.style.display = "block";
+      var y = document.getElementById("searchedItem");
+      var name = (<HTMLInputElement>document.getElementById("search")).value; 
+      console.log(name);
+      if(name != ""){
+      this.item = this.api.searchAqar(name);
+      console.log(this.item);
+
+      if (x.style.display === "block") {
+        x.style.display = "none";
+        y.style.display = "block";
+        (<HTMLInputElement>document.getElementById("search")).value = "";
+      }
+      else {
+        y.style.display = "none";
+        x.style.display = "block";
+      }
     }
-    else {
-      y.style.display = "none";
-      x.style.display = "block";
+    else{
+      alert('not valid input!');
+        y.style.display = "none";
+        x.style.display = "block";
+      
     }
   }
 }
