@@ -173,6 +173,7 @@ export class ServicesService {
 
   async addReminder(aqar:aqar,remaindInfo:remainder){
     let user = await this.getUser();
+    console.log(user)
     
     if(user ==null){
       alert("null")
@@ -206,7 +207,7 @@ export class ServicesService {
 
     //add HisoryAqar to HisoryDB  
 
-    if(aqar != undefined || aqar != null){
+    
       this.db.firestore.collection('HisoryAqar').add({
             id:userId,
             name: aqar.name,
@@ -219,7 +220,7 @@ export class ServicesService {
         }).catch(err => {
         console.log(err)
       });
-     }
+     
       
       alert("Remainder is Addes");
 

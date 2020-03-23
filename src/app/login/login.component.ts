@@ -73,13 +73,7 @@ export class LoginComponent implements OnInit {
 
     this.api.searchAqar("name");
   }
-  addRemainder(){
-    console.log(this.user.email)
-    let newAqar =new aqar("vava","jhdsfjhdjsfh","121","/sadsad");
-    let remainder2:remainder = new remainder("title","fsd","fdsd");
-
-    this.api.addReminder(newAqar,remainder2);
-  }
+  
   details(){
     
   }

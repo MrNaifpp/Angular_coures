@@ -16,9 +16,12 @@ export class SetReminderComponent implements OnInit {
   username;
   aqar:aqar;
   remainder: remainder = new remainder('','','');
+  user;
 
   async ngOnInit() {
 
+
+    this.user = this.api.getUser();
     await this.route2.params.subscribe(params => {
       // get the name out of the route params
       this.username = params['remainder'];
@@ -45,6 +48,7 @@ export class SetReminderComponent implements OnInit {
     this.remainder.title = name;
     this.remainder.time = time;
     this.remainder.date = date;
+    this.aqar.imgUrl="../../assets/img/pic.png"
     this.api.addReminder(this.aqar, this.remainder);
   }
 }

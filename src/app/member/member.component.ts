@@ -53,13 +53,7 @@ export class MemberComponent implements OnInit {
     this.api.logOut(); 
   }
 
-  addRemainder(){
-     console.log(this.api.getUser())
-     let newAqar =new aqar("vava","jhdsfjhdjsfh","121","/sadsad");
-     let remainder2:remainder = new remainder("title","fsd","fdsd");
-
-     this.api.addReminder(newAqar,remainder2);
-   }
+  
 
    pullMyHistory(){
      console.log(" pullMyHistory working")
