@@ -137,18 +137,22 @@ export class ServicesService {
   }
   
   
-  searchAqar(name): aqar{
+  searchAqar(name){
+
+    let searchAqar=new aqar("","","","");
+
       this.db.firestore.collection('aqar').where(
         'name', '==',name).get().then((snapshot)=>{
           snapshot.docs.forEach(doc =>{
-              this.searchedAqar.name = doc.data().name;
-              this.searchedAqar.price = doc.data().price;
-              this.searchedAqar.description=doc.data().description;
+            searchAqar.name = doc.data().name;
+            searchAqar.price = doc.data().price;
+            searchAqar.description=doc.data().description;
+             
           })
         }).catch(err =>{
           alert(err)
         })
-         return this.searchedAqar;
+        return searchAqar;   
   }
 
   getId(email){
@@ -341,42 +345,20 @@ export class ServicesService {
     }
 
     aqarInfo;
+    
     async getAqarInfo(Name) {
+      let searchedAqar;
       
-      
-      return await this.db.firestore.collection('aqar').where(
-        'name','==',Name).get().then((snapshot)=>{
-              snapshot.docs.forEach(doc => {
-                return doc.data();
-                
-              })
-              
-             
+      await this.db.firestore.collection('aqar').where(
+        'name', '==',Name).get().then((snapshot)=>{
+          snapshot.docs.forEach(doc =>{
+              searchedAqar = doc.data();   
+          })
         }).catch(err =>{
-         alert(err)
+          alert(err)
         })
 
-
-      // try {
-      //   let aqarInfo;
-      // console.log(Name)
-      //  this.db.firestore.collection("aqar").where("name", "==", Name)
-      // .get()
-      // .then(function(querySnapshot) {
-      //     querySnapshot.forEach(function(doc) {
-      //         // doc.data() is never undefined for query doc snapshots
-      //         aqarInfo=doc.data();
-      //     });
-      //     console.log(aqarInfo.name)
-      //     return aqarInfo;
-          
-      // })
-      // .catch(function(error) {
-      //     console.log("Error getting documents: ", error);
-      // }); 
-      // }
-      // } catch (error) {
-        
+        return searchedAqar;     
       }
       
 
