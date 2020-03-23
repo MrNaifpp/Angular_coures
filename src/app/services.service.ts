@@ -344,22 +344,44 @@ export class ServicesService {
 
     }
 
-    async getAqarInfo(Name){
-      let aqarInfo;
-      console.log(Name)
-      await this.db.firestore.collection("aqar").where("name", "==", Name)
-      .get().then(function(querySnapshot) {
-          querySnapshot.forEach(function(doc) {
-              // doc.data() is never undefined for query doc snapshots
-              aqarInfo=doc.data();
-          });
-          console.log(aqarInfo)
-          return aqarInfo;
+    aqarInfo;
+    async getAqarInfo(Name) {
+      
+      
+      return await this.db.firestore.collection('aqar').where(
+        'name','==',Name).get().then((snapshot)=>{
+              snapshot.docs.forEach(doc => {
+                return doc.data();
+                
+              })
+              
+             
+        }).catch(err =>{
+         alert(err)
+        })
+
+
+      // try {
+      //   let aqarInfo;
+      // console.log(Name)
+      //  this.db.firestore.collection("aqar").where("name", "==", Name)
+      // .get()
+      // .then(function(querySnapshot) {
+      //     querySnapshot.forEach(function(doc) {
+      //         // doc.data() is never undefined for query doc snapshots
+      //         aqarInfo=doc.data();
+      //     });
+      //     console.log(aqarInfo.name)
+      //     return aqarInfo;
           
-      })
-      .catch(function(error) {
-          console.log("Error getting documents: ", error);
-      }); 
-    }
+      // })
+      // .catch(function(error) {
+      //     console.log("Error getting documents: ", error);
+      // }); 
+      // }
+      // } catch (error) {
+        
+      }
+      
 
 }
