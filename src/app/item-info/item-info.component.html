@@ -26,7 +26,7 @@
                     <br>
                     <p class='text' id='price'>{{aqar?.price}}</p>
                 </div>
-                <div (click)="setReminder()" id='reminderContainer'>
+                <div routerLink="/itemList/{{aqar?.name}}/{{aqar?.name}}" id='reminderContainer'>
                     <i class="fa fa-plus" id='icon'></i>
                     <p id='remider'>ضافة الى قائمة التذكير</p>
                 </div>

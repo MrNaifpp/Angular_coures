@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../services.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { aqar } from '../models/models';
+import { aqar, remainder } from '../models/models';
 
 @Component({
   selector: 'app-set-reminder',
@@ -15,6 +15,7 @@ export class SetReminderComponent implements OnInit {
   
   username;
   aqar:aqar;
+  remainder: remainder = new remainder('','','');
 
   async ngOnInit() {
 
@@ -40,6 +41,10 @@ export class SetReminderComponent implements OnInit {
     var name = (<HTMLInputElement>document.getElementById("name")).value;
     var time = (<HTMLInputElement>document.getElementById("time")).value;
     var date = (<HTMLInputElement>document.getElementById("date")).value;
-
+    console.log(name);
+    this.remainder.title = name;
+    this.remainder.time = time;
+    this.remainder.date = date;
+    this.api.addReminder(this.aqar, this.remainder);
   }
 }

@@ -3,7 +3,7 @@
     </head>
     <body>
         <div id='container'>
-            <div (click)="reminderPage()" id='backBTNposition' >
+            <div routerLink="/reminder/{{username?.email}}" id='backBTNposition' >
                 <button id='backBTN'>></button>
             </div>
             <br>
@@ -24,8 +24,6 @@
                     <p id='addRemider'>حفظ التذكير</p>
                 </div>
             </div>
-            
-
         </div>
     </body>
 </html>

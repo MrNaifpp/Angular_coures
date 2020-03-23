@@ -34,6 +34,7 @@ export class ItemInfoComponent implements OnInit {
     this.router.navigate(['/itemList']);
   }
   setReminder(){
-    this.router.navigate(['/setReminder']);
+    
+    //this.router.navigate(['/setReminder']);
   }
 }
