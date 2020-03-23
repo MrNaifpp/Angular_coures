@@ -139,18 +139,20 @@ export class ServicesService {
   
   searchAqar(name){
 
+    let searchAqar=new aqar("","","","");
+
       this.db.firestore.collection('aqar').where(
         'name', '==',name).get().then((snapshot)=>{
           snapshot.docs.forEach(doc =>{
-              this.searchedAqar.name = doc.data().name;
-              this.searchedAqar.price = doc.data().price;
-              this.searchedAqar.description=doc.data().description;
+            searchAqar.name = doc.data().name;
+            searchAqar.price = doc.data().price;
+            searchAqar.description=doc.data().description;
              
           })
         }).catch(err =>{
           alert(err)
         })
-        return this.searchedAqar;   
+        return searchAqar;   
   }
 
   getId(email){
