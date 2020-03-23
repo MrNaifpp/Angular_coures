@@ -190,7 +190,7 @@ export class ServicesService {
       }).catch(err =>{
        alert(err)
       })
-     //add Remainder to RemainderDb and HisoryAqar to HisoryDB
+     //add Remainder to RemainderDb 
       
      this.db.firestore.collection('RemainderDb').add({
           id:userId,
@@ -202,6 +202,8 @@ export class ServicesService {
       }).catch(err => {
         console.log(err)
       });
+
+    //add HisoryAqar to HisoryDB  
      
       this.db.firestore.collection('HisoryAqar').add({
             id:userId,
@@ -236,6 +238,8 @@ export class ServicesService {
     await this.myAuth.auth.onAuthStateChanged(async user => { 
        if(user!=null){
         await this.updateUser(user.email)
+       }else{
+         this.router.navigate(['login'])
        }
     });
     return this.newUser
@@ -287,7 +291,7 @@ export class ServicesService {
             snapshot.docs.forEach(doc => {
               userId=doc.id 
             })
-            return userId;
+            
       }).catch(err =>{
        alert(err)
       })
@@ -302,17 +306,14 @@ export class ServicesService {
           querySnapshot.forEach(function(doc) {
               // doc.data() is never undefined for query doc snapshots
               historyAqars.push(doc.data())
-              console.log(doc.data());
+             
           });
-          console.log(historyAqars)
       })
       .catch(function(error) {
           console.log("Error getting documents: ", error);
       }); 
-
-        
-
-
+        return historyAqars
+      
   }
 
   async pullMyRemainders(){

@@ -11,7 +11,11 @@ export class ReminderComponent implements OnInit {
 
   constructor(public api : ServicesService, private router: Router) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+
+    await this.api.pullMyRemainders().then(v => {
+      console.log(v)
+  })
   }
 
   membersPage(){
