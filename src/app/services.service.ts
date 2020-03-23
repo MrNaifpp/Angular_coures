@@ -207,7 +207,7 @@ export class ServicesService {
 
     //add HisoryAqar to HisoryDB  
 
-    if(user != undefined || user != null ){
+    if(aqar != undefined || aqar != null ){
 
       this.db.firestore.collection('HisoryAqar').add({
             id:userId,
@@ -352,7 +352,7 @@ export class ServicesService {
       .catch(function(error) {
           console.log("Error getting documents: ", error);
       }); 
-
+        return remainders
     }
 
     aqarInfo;
@@ -370,6 +370,20 @@ export class ServicesService {
         })
 
         return searchedAqar;     
+      }
+
+
+      deleteRemainder(title){
+        
+        this.db.firestore.collection("cities").doc("DC").delete().then(function() {
+          console.log("Document successfully deleted!");
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
+
+
+
+
       }
       
 

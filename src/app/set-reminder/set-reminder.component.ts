@@ -25,13 +25,16 @@ export class SetReminderComponent implements OnInit {
     await this.route2.params.subscribe(params => {
       // get the name out of the route params
       this.username = params['remainder'];
-      console.log(this.username)  
+       
     })
-
-    await this.api.getAqarInfo(this.username).then(v =>{
+    if(this.username != undefined){
+      await this.api.getAqarInfo(this.username).then(v =>{
       this.aqar =v;
     })
      console.log(this.aqar)
+    }
+
+    
 
   }
 
@@ -49,6 +52,7 @@ export class SetReminderComponent implements OnInit {
     this.remainder.time = time;
     this.remainder.date = date;
     // this.aqar.imgUrl="../../assets/img/pic.png"
+    console.log(this.user)
     if(this.username == undefined || this.username == null ){
       this.aqar=null;
       console.log(this.aqar)

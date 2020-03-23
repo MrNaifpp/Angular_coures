@@ -22,8 +22,6 @@ export class MyItemsComponent implements OnInit {
   membersPage(){
     this.router.navigate(['/member']);
   }
-  itemInfo(){
-    this.router.navigate(['/itemInfo']);
-  }
+  
 
 }
