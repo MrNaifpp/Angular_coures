@@ -9,6 +9,16 @@ body{
     height: 100vh;
     position:absolute; top:0; bottom:0; right:0; left:0;
 }
+#reminderItemAnonymous{
+    font-size: 20pt;
+    margin-top: 300pt;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+}
+
 
 #backBTN{
     border-style: solid;
@@ -265,4 +275,17 @@ body{
         height: 350pt;
         overflow: auto;    
     }
+    #reminderItemAnonymous{
+        font-size: 15pt;
+        margin-top: 100pt;
+        border-style: solid;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        cursor: pointer;
+        width: 211pt;
+        text-align: center;
+        margin-left: 45pt;
+    }
+    
   }
