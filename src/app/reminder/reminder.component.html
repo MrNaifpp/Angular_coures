@@ -16,7 +16,7 @@
             </div>
             
             <div  id='remindersContainer'  >
-                <div *ngFor='let item of array' id='reminders'>
+                <div *ngFor='let item of itemArray' id='reminders'>
                     <div id='titleAndIconContainer'>
                         <img (click)="deleteReminder(item)" src='assets\img\close.png' id='moreInfoIcon'>
                         <p id='reminderTitle'>{{item.title}}</p>

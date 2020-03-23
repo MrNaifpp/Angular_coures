@@ -380,6 +380,4 @@ export class ServicesService {
             console.error("Error removing document: ", error);
         });
       }
-      
-
 }
