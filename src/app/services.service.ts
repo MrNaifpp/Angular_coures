@@ -348,21 +348,19 @@ export class ServicesService {
 
     }
 
-    async getAqarInfo (Name){
-      let aqarInfo:aqar = new aqar();
+    async getAqarInfo: aqar(Name){
+      let aqarInfo;
       console.log(Name)
       await this.db.firestore.collection("aqar").where("name", "==", Name)
       .get()
       .then(function(querySnapshot) {
           querySnapshot.forEach(function(doc) {
               // doc.data() is never undefined for query doc snapshots
-              aqarInfo.name= doc.data().name
-              aqarInfo.description= doc.data().description
-              aqarInfo.price= doc.data().price
-              
+              aqarInfo=doc.data();
           });
-          console.log(aqarInfo)
+          console.log(aqarInfo.name)
           return aqarInfo;
+          
       })
       .catch(function(error) {
           console.log("Error getting documents: ", error);

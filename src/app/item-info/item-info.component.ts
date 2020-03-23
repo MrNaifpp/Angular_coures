@@ -11,7 +11,7 @@ import { aqar } from '../models/models';
 export class ItemInfoComponent implements OnInit {
 
    username;
-   aqar;
+   aqar ;
   constructor(public api : ServicesService, private router: Router,private route : ActivatedRoute) { }
 
   async ngOnInit() {
@@ -23,8 +23,8 @@ export class ItemInfoComponent implements OnInit {
   
        
     })
-    this.aqar =  await this.api.getAqarInfo(this.username);
-    console.log(this.aqar);
+    this.aqar =  this.api.getAqarInfo(this.username);
+    console.log(this.aqar)
 
 
   }
