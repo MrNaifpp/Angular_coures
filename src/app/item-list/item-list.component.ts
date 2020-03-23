@@ -43,7 +43,9 @@ export class ItemListComponent implements OnInit {
     var x = document.getElementById("scroll");
     var y = document.getElementById("searchedItem");
     var name = (<HTMLInputElement>document.getElementById("search")).value; 
+    console.log(name);
     let item = this.api.searchAqar(name);
+    console.log(item);
     
     if (x.style.display === "block") {
       x.style.display = "none";

@@ -21,8 +21,8 @@
                 
             </div>
             <div id='searchedItem' style='display: none'>
-                <div  *ngFor="let aqar of item" (click)="itemInfo()" id='items'>
-                    {{ aqar.name }}
+                <div  (click)="itemInfo()" id='items'>
+                    {{ item?.name }}
                 </div>
             </div>
 
