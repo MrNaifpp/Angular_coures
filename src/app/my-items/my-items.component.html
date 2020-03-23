@@ -12,7 +12,7 @@
             </div>
             
             <div id='reminderItemsContainer'>
-                <div (click)="itemInfo()" id='reminderItem' *ngFor="let item of arrayOfitems">
+                <div routerLink="/myItems/{{item.name}}" id='reminderItem' *ngFor="let item of arrayOfitems">
                     <p>{{item.name}}</p>
                 </div>           
             </div>

@@ -16,6 +16,7 @@ export class MyItemsComponent implements OnInit {
       await this.api.pullMyHistory().then(v => {
          this.arrayOfitems = v;
      })
+     console.log(this.arrayOfitems)
   }
   membersPage(){
     this.router.navigate(['/member']);
