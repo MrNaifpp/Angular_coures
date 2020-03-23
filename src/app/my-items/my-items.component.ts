@@ -11,7 +11,10 @@ export class MyItemsComponent implements OnInit {
 
   constructor(public api : ServicesService, private router: Router) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+      await this.api.pullMyHistory().then(v => {
+         console.log(v)
+     })
   }
   membersPage(){
     this.router.navigate(['/member']);
