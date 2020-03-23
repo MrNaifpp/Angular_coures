@@ -24,6 +24,7 @@ const routes: Routes = [
   {path : "myItems" , component : MyItemsComponent},
   {path : "setReminder" , component : SetReminderComponent},
   {path : "itemList/:name" , component : ItemInfoComponent},
+  {path : "itemList/:name/:remainder" , component : SetReminderComponent},
 
 ];
 

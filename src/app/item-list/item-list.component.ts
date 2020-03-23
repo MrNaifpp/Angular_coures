@@ -26,6 +26,8 @@ export class ItemListComponent implements OnInit {
       console.log(parameter['item'])
     })
 
+    
+
      this.listOfAqar  = await this.api.pullAqars();
       console.log(this.listOfAqar);
   }
