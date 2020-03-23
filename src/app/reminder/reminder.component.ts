@@ -12,10 +12,18 @@ export class ReminderComponent implements OnInit {
   array =[];
   itemsArray=[];
   idArray=[];
-
+  isAnonymous;
+  
   constructor(public api : ServicesService, private router: Router) { }
 
   async ngOnInit() {
+
+    if(await this.api.isAnonymous()){
+      this.isAnonymous=true;
+    }else
+    this.isAnonymous=false;
+
+    console.log(this.isAnonymous)
 
     await this.api.pullMyRemainders().then(v => {
       this.array = v;

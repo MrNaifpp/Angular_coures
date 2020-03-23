@@ -60,6 +60,16 @@ body{
     border-width: 1pt;
     cursor: pointer;
 }
+#reminderItemAnonymous{
+    font-size: 20pt;
+    margin-top: 300pt;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+}
+
 
 #container{
     margin-top: 80pt;
@@ -158,5 +168,14 @@ body{
         width: auto;
         height: 350pt;
         overflow: auto;    
+    }
+    #reminderItemAnonymous{
+        font-size: 20pt;
+        margin-top: 150pt;
+        border-style: solid;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        cursor: pointer;
     }
   }

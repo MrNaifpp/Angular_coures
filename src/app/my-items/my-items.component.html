@@ -12,7 +12,12 @@
             </div>
             
             <div id='reminderItemsContainer'>
-                <div routerLink="/myItemsSecondPage/{{item.name}}" id='reminderItem' *ngFor="let item of arrayOfitems">
+                
+                    <div *ngIf="isAnonymous" id='reminderItemAnonymous' >
+                        <p>التسجيل اولا للحصول على تاريخ الادوية</p>
+                    </div>           
+                
+                <div  routerLink="/myItemsSecondPage/{{item.name}}" id='reminderItem' *ngFor="let item of arrayOfitems">
                     <p>{{item.name}}</p>
                 </div>           
             </div>

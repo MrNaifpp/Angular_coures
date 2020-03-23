@@ -10,9 +10,20 @@ import { Router } from '@angular/router';
 export class MyItemsComponent implements OnInit {
 
   arrayOfitems;
-  constructor(public api : ServicesService, private router: Router) { }
+  isAnonymous;
+  constructor(public api : ServicesService, private router: Router) {
+  
+   }
 
   async ngOnInit() {
+
+    if(await this.api.isAnonymous()){
+      this.isAnonymous=true;
+    }else
+    this.isAnonymous=false;
+
+    console.log(this.isAnonymous)
+    
       await this.api.pullMyHistory().then(v => {
          this.arrayOfitems = v;
      })
