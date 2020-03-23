@@ -336,19 +336,13 @@ export class ServicesService {
        alert(err)
       })
 
-      await this.db.firestore.collection("RemainderDb").where("id", "==", userId)
+      this.db.firestore.collection("RemainderDb").where("id", "==", userId)
       .get()
       .then(function(querySnapshot) {
           querySnapshot.forEach(function(doc) {
-              // doc.data() is never undefined for query doc snapshots
-              console.log(doc.data().date)
-              testRemainder.date=(doc.data().date+""),
-              console.log(doc.data().date)
-              testRemainder.deleteId=doc.id,
-              testRemainder.time=doc.data().time,
-              testRemainder.title=doc.data().title.
-        
-               remainders.push(testRemainder)
+                   
+               remainders.push(doc.data())
+               remainders.push(doc.id)
               
           });
           
@@ -377,17 +371,13 @@ export class ServicesService {
       }
 
 
-      deleteRemainder(title){
-        
-        this.db.firestore.collection("cities").doc("DC").delete().then(function() {
-          console.log("Document successfully deleted!");
+      deleteRemainder(id){
+  
+        this.db.firestore.collection("RemainderDb").doc(id).delete().then(function() {
+          console.log("Remainder successfully deleted!");
         }).catch(function(error) {
             console.error("Error removing document: ", error);
         });
-
-
-
-
       }
       
 
