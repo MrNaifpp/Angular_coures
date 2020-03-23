@@ -23,6 +23,7 @@ export class remainder {
     public title: string;
     public date:string;
     public time :string;
+    public deleteId:string;
 
     
     constructor(title,date,time){
