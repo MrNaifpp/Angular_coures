@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../services.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { aqar } from '../models/models';
 
 @Component({
   selector: 'app-set-reminder',
@@ -9,9 +10,25 @@ import { Router } from '@angular/router';
 })
 export class SetReminderComponent implements OnInit {
 
-  constructor(public api : ServicesService, private router: Router) { }
+  
+  constructor(public api : ServicesService, private router: Router,private route2 : ActivatedRoute) { }
+  
+  username;
+  aqar:aqar;
 
-  ngOnInit() {
+  async ngOnInit() {
+
+    await this.route2.params.subscribe(params => {
+      // get the name out of the route params
+      this.username = params['remainder'];
+      console.log(this.username)  
+    })
+
+    await this.api.getAqarInfo(this.username).then(v =>{
+      this.aqar =v;
+    })
+     console.log(this.aqar)
+
   }
 
   reminderPage(){
