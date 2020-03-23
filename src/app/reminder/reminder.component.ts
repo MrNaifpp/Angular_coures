@@ -20,18 +20,19 @@ export class ReminderComponent implements OnInit {
     await this.api.pullMyRemainders().then(v => {
       this.array = v;
       console.log(this.array);
-      
-      for(var i = 0; i < this.array.length ; i ++ ){
-        if(i % 2){
-          this.itemsArray.push(this.array[i]);
-        }
-        else{
-          this.idArray.push(this.array[i]);
-        }
+    })
+    console.log(this.array.length);
+    for( let i = 0;  i < this.array.length ; i++ ){
+      console.log('in if')
+      if(i % 2){
+        this.itemsArray.push(this.array[i]);
+      }
+      else{
+        this.idArray.push(this.array[i]);
       }
       console.log(this.itemsArray);
       console.log(this.idArray);
-  })
+    }
   }
 
   membersPage(){
