@@ -43,7 +43,7 @@ body{
 #itemImg{
     width: 200pt;
 }
-#text{
+.text{
     direction: rtl;
     float: right;
     width: auto;
@@ -55,7 +55,7 @@ body{
 }
 #reminderContainer{
     margin: 20pt;
-    margin-top: 130pt;
+    margin-top: 80pt;
     cursor: pointer;
 }
 #remider{
@@ -165,7 +165,7 @@ body{
         width: 200pt;
     }
     
-#text{
+.text{
     direction: rtl;
     float: right;
     width: auto;
@@ -177,7 +177,7 @@ body{
 }
 #reminderContainer{
     margin: 20pt;
-    margin-top: 130pt;
+    margin-top: 80pt;
 }
 #remider{
     direction: rtl;

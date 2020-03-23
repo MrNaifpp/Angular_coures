@@ -9,8 +9,10 @@
             <div id='itemInfoContainer'>
                 <div id='imgContainer'><img src='assets\img\pic.png' id='itemImg'></div>
                 <div id='textContainer'>
-                    <h3 id='text'>طريقة الاستعمال:</h3>
-                    <p id='text'>يوضع على منطقه الألم ويدلك لمدة 2-4 دقائق.</p>
+                    <h3 class='text'>طريقة الاستعمال:</h3>
+                    <br>
+                    <br>
+                    <p class='text' id='description' >{{aqar?.description}}</p>
                 </div>
                 <br>
                 <br>
@@ -19,10 +21,10 @@
                 <br>
                 <br>
                 <div id='textContainer'>
-                    <h3 id='text'>السعر:</h3>
+                    <h3 class='text'>السعر:</h3>
                     <br>
                     <br>
-                    <p id='text'>10 ريال.</p>
+                    <p class='text' id='price'>{{aqar?.price}}</p>
                 </div>
                 <div (click)="setReminder()" id='reminderContainer'>
                     <i class="fa fa-plus" id='icon'></i>

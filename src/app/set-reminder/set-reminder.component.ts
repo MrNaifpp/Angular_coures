@@ -12,9 +12,18 @@ export class SetReminderComponent implements OnInit {
   constructor(public api : ServicesService, private router: Router) { }
 
   ngOnInit() {
+    
   }
 
+  
   reminderPage(){
     this.router.navigate(['/reminder']);
+  }
+
+  submetReminder(){
+    var name = (<HTMLInputElement>document.getElementById("name")).value;
+    var time = (<HTMLInputElement>document.getElementById("time")).value;
+    var date = (<HTMLInputElement>document.getElementById("date")).value;
+
   }
 }

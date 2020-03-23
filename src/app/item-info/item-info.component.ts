@@ -21,14 +21,13 @@ export class ItemInfoComponent implements OnInit {
       // get the name out of the route params
       this.username = params['name'];
       console.log(this.username)
-  
-       
     })
    
        await this.api.getAqarInfo(this.username).then(v =>{
         this.aqar =v;
       })
-     console.log(this.aqar)
+     console.log(this.aqar);
+
   }
 
   itemListPage(){
