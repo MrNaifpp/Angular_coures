@@ -207,22 +207,25 @@ export class ServicesService {
 
     //add HisoryAqar to HisoryDB  
 
-    
+    if(user != undefined || user != null ){
+
       this.db.firestore.collection('HisoryAqar').add({
             id:userId,
             name: aqar.name,
             description: aqar.description,
             price: aqar.price,
-            imgUrl: aqar.imgUrl,
+           
 
         }).then((succes)=>{
             console.log("HisoryAqar is added");
         }).catch(err => {
         console.log(err)
       });
+    }
      
       
       alert("Remainder is Addes");
+      this.router.navigate(["/reminder"])
 
   }
    async isAnonymous  (){
