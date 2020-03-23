@@ -28,7 +28,16 @@ export class ItemListComponent implements OnInit {
 
     
 
-     this.listOfAqar  = await this.api.pullAqars();
+    console.log(this.listOfAqar)
+    if(this.listOfAqar == null || this.listOfAqar == undefined || this.listOfAqar.length == 0 ){
+         this.api.pullAqars().then(listOfAqar =>{
+              this.listOfAqar = listOfAqar;
+              console.log(listOfAqar)
+          });
+    
+    }
+     
+
       console.log(this.listOfAqar);
   }
 
