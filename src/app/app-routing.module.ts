@@ -11,6 +11,7 @@ import { ItemInfoComponent } from './item-info/item-info.component';
 import { ReminderComponent } from './reminder/reminder.component';
 import { MyItemsComponent } from './my-items/my-items.component';
 import { SetReminderComponent } from './set-reminder/set-reminder.component';
+import { SecondItemInfoComponent } from './second-item-info/second-item-info.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,8 @@ const routes: Routes = [
   {path : "setReminder" , component : SetReminderComponent},
   {path : "itemList/:name" , component : ItemInfoComponent},
   {path : "itemList/:name/:remainder" , component : SetReminderComponent},
+  //khaled edits:
+  {path : "myItemsSecondPage/:name" , component : SecondItemInfoComponent},
 
 ];
 
