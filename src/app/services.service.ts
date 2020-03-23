@@ -172,7 +172,7 @@ export class ServicesService {
   }
 
   async addReminder(aqar:aqar,remaindInfo:remainder){
-    let user=await this.getUser();
+    let user = await this.getUser();
     
     if(user ==null){
       alert("null")
