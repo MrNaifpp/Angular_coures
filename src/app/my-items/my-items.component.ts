@@ -17,6 +17,7 @@ export class MyItemsComponent implements OnInit {
          this.arrayOfitems = v;
          console.log(this.arrayOfitems)
      })
+     console.log(this.arrayOfitems)
   }
   membersPage(){
     this.router.navigate(['/member']);
