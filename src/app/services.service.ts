@@ -309,10 +309,6 @@ export class ServicesService {
       .catch(function(error) {
           console.log("Error getting documents: ", error);
       }); 
-
-        
-
-
   }
 
   async pullMyRemainders(){
@@ -348,17 +344,16 @@ export class ServicesService {
 
     }
 
-    async getAqarInfo: aqar(Name){
+    async getAqarInfo(Name){
       let aqarInfo;
       console.log(Name)
       await this.db.firestore.collection("aqar").where("name", "==", Name)
-      .get()
-      .then(function(querySnapshot) {
+      .get().then(function(querySnapshot) {
           querySnapshot.forEach(function(doc) {
               // doc.data() is never undefined for query doc snapshots
               aqarInfo=doc.data();
           });
-          console.log(aqarInfo.name)
+          console.log(aqarInfo)
           return aqarInfo;
           
       })
