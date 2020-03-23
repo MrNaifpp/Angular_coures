@@ -24,20 +24,11 @@ export class ItemInfoComponent implements OnInit {
   
        
     })
-    this.db.firestore.collection('aqar').where(
-      'name','==',this.username).get().then((snapshot)=>{
-            snapshot.docs.forEach(doc => {
-              console.log(doc.data()); 
-              
+   
+       await this.api.getAqarInfo(this.username).then(v =>{
+        this.aqar =v;
       })
-            
-           
-      }).catch(err =>{
-       alert(err)
-      })
-    
-
-
+     console.log(this.aqar)
   }
 
   itemListPage(){

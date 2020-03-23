@@ -147,12 +147,10 @@ export class ServicesService {
               this.searchedAqar.description=doc.data().description;
              
           })
-            return this.searchedAqar;
         }).catch(err =>{
           alert(err)
         })
-        
-        
+        return this.searchedAqar;   
   }
 
   getId(email){
@@ -349,42 +347,20 @@ export class ServicesService {
     }
 
     aqarInfo;
+    
     async getAqarInfo(Name) {
+      let searchedAqar;
       
-      
-      return await this.db.firestore.collection('aqar').where(
-        'name','==',Name).get().then((snapshot)=>{
-              snapshot.docs.forEach(doc => {
-                return doc.data();
-                
-              })
-              
-             
+      await this.db.firestore.collection('aqar').where(
+        'name', '==',Name).get().then((snapshot)=>{
+          snapshot.docs.forEach(doc =>{
+              searchedAqar = doc.data();   
+          })
         }).catch(err =>{
-         alert(err)
+          alert(err)
         })
 
-
-      // try {
-      //   let aqarInfo;
-      // console.log(Name)
-      //  this.db.firestore.collection("aqar").where("name", "==", Name)
-      // .get()
-      // .then(function(querySnapshot) {
-      //     querySnapshot.forEach(function(doc) {
-      //         // doc.data() is never undefined for query doc snapshots
-      //         aqarInfo=doc.data();
-      //     });
-      //     console.log(aqarInfo.name)
-      //     return aqarInfo;
-          
-      // })
-      // .catch(function(error) {
-      //     console.log("Error getting documents: ", error);
-      // }); 
-      // }
-      // } catch (error) {
-        
+        return searchedAqar;     
       }
       
 
