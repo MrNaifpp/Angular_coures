@@ -123,17 +123,18 @@ export class ServicesService {
 
   }
   
-  aqars2=[];
-  pullAqars(){
-    this.aqars=[];
+  
+  async pullAqars(){
+    let aqars2 = [];
     
-    this.db.firestore.collection('aqar').get().then((snapshot)=>
+      await this.db.firestore.collection('aqar').get().then((snapshot)=>{
       snapshot.docs.forEach(doc =>{
-       this.aqars2.push(doc.data())
-        
-      }))
+       aqars2.push(doc.data());
+      }) 
       
-      return this.aqars2;
+    })
+      
+      return aqars2;  
   }
   
   
@@ -149,6 +150,7 @@ export class ServicesService {
             searchAqar.description=doc.data().description;
              
           })
+          
         }).catch(err =>{
           alert(err)
         })
