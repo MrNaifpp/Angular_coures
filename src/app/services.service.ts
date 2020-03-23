@@ -288,9 +288,7 @@ export class ServicesService {
     let currentUser:user = await this.getUser();
     let userId;
     let historyAqars:any=[];
-    
-    
-  
+
     //get id of User
     await this.db.firestore.collection('user Information').where(
       'email','==',currentUser.email).get().then((snapshot)=>{
@@ -303,8 +301,6 @@ export class ServicesService {
       })
 
       // pull hisory recond with id
-
-
 
       this.db.firestore.collection("HisoryAqar").where("id", "==", userId)
       .get()
@@ -327,6 +323,7 @@ export class ServicesService {
     let currentUser:user = await this.getUser();
     let userId;
     let remainders=[];
+    let testRemainder:remainder;
 
     //get id of User
     await this.db.firestore.collection('user Information').where(
@@ -339,13 +336,19 @@ export class ServicesService {
        alert(err)
       })
 
-      this.db.firestore.collection("RemainderDb").where("id", "==", userId)
+      await this.db.firestore.collection("RemainderDb").where("id", "==", userId)
       .get()
       .then(function(querySnapshot) {
           querySnapshot.forEach(function(doc) {
               // doc.data() is never undefined for query doc snapshots
-              remainders.push(doc.data())
-              remainders.push(doc.id)
+              console.log(doc.data().date)
+              testRemainder.date=(doc.data().date+""),
+              console.log(doc.data().date)
+              testRemainder.deleteId=doc.id,
+              testRemainder.time=doc.data().time,
+              testRemainder.title=doc.data().title.
+        
+               remainders.push(testRemainder)
               
           });
           
@@ -353,7 +356,7 @@ export class ServicesService {
       .catch(function(error) {
           console.log("Error getting documents: ", error);
       }); 
-        return remainders
+        return remainders;
     }
 
     aqarInfo;
