@@ -48,7 +48,14 @@ export class SetReminderComponent implements OnInit {
     this.remainder.title = name;
     this.remainder.time = time;
     this.remainder.date = date;
-    this.aqar.imgUrl="../../assets/img/pic.png"
-    this.api.addReminder(this.aqar, this.remainder);
+    // this.aqar.imgUrl="../../assets/img/pic.png"
+    if(this.username == undefined || this.username == null ){
+      this.aqar=null;
+      console.log(this.aqar)
+      this.api.addReminder(this.aqar, this.remainder);
+    }else{
+      this.api.addReminder(this.aqar, this.remainder);
+    }
+    
   }
 }
