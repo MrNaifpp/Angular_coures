@@ -20,16 +20,15 @@ export class ItemListComponent implements OnInit {
   //  searched:boolean = true;
 
   async ngOnInit() {
-
+    
     this.router2.params.subscribe(parameter => {
       this.name = parameter['item'];
       console.log(parameter['item'])
     })
-
-    
-
-     this.listOfAqar  = await this.api.pullAqars();
+    if(this.listOfAqar == null || this.listOfAqar == undefined){
+      this.listOfAqar  = await this.api.pullAqars();
       console.log(this.listOfAqar);
+    }    
   }
 
   itemInfo(){
@@ -43,22 +42,22 @@ export class ItemListComponent implements OnInit {
   search(){
     //check the content then send it ====================================================
     var x = document.getElementById("scroll");
-      var y = document.getElementById("searchedItem");
-      var name = (<HTMLInputElement>document.getElementById("search")).value; 
-      console.log(name);
-      if(name != ""){
-      this.item = this.api.searchAqar(name);
-      console.log(this.item);
+    var y = document.getElementById("searchedItem");
+    var name = (<HTMLInputElement>document.getElementById("search")).value; 
+    console.log(name);
+    if(name != ""){
+    this.item = this.api.searchAqar(name);
+    console.log(this.item);
 
-      if (x.style.display === "block") {
-        x.style.display = "none";
-        y.style.display = "block";
-        (<HTMLInputElement>document.getElementById("search")).value = "";
-      }
-      else {
-        y.style.display = "none";
-        x.style.display = "block";
-      }
+    if (x.style.display === "block") {
+      x.style.display = "none";
+      y.style.display = "block";
+      (<HTMLInputElement>document.getElementById("search")).value = "";
+    }
+    else {
+      y.style.display = "none";
+      x.style.display = "block";
+    }
     }
     else{
       alert('not valid input!');

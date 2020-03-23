@@ -10,13 +10,14 @@ body{
     position:absolute; top:0; bottom:0; right:0; left:0;
 }
 #reminderItemAnonymous{
-    font-size: 20pt;
-    margin-top: 300pt;
+    font-size: 15pt;
+    margin-top: 100pt;
     border-style: solid;
     border-top: none;
     border-left: none;
     border-right: none;
     cursor: pointer;
+    text-align: center;
 }
 
 

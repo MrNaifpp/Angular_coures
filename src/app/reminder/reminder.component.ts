@@ -44,6 +44,7 @@ export class ReminderComponent implements OnInit {
   deleteReminder(a:any){
     this.api.deleteRemainder(a);
     alert('reminder deleted.')
+    
   }
 
 }

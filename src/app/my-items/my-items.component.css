@@ -61,8 +61,8 @@ body{
     cursor: pointer;
 }
 #reminderItemAnonymous{
-    font-size: 20pt;
-    margin-top: 300pt;
+    font-size: 15pt;
+    margin-top: 150pt;
     border-style: solid;
     border-top: none;
     border-left: none;
