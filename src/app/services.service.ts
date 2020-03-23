@@ -137,22 +137,18 @@ export class ServicesService {
   }
   
   
-  searchAqar(name){
-
+  searchAqar(name): aqar{
       this.db.firestore.collection('aqar').where(
         'name', '==',name).get().then((snapshot)=>{
           snapshot.docs.forEach(doc =>{
               this.searchedAqar.name = doc.data().name;
               this.searchedAqar.price = doc.data().price;
               this.searchedAqar.description=doc.data().description;
-             
           })
-            return this.searchedAqar;
         }).catch(err =>{
           alert(err)
         })
-        
-        
+         return this.searchedAqar;
   }
 
   getId(email){
