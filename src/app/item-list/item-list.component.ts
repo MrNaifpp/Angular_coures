@@ -34,13 +34,10 @@ export class ItemListComponent implements OnInit {
               this.listOfAqar = listOfAqar;
               console.log(listOfAqar)
           });
-    
     }
-     
-
       console.log(this.listOfAqar);
     }    
-  }
+  
 
   itemInfo(){
     this.router.navigate(['/itemInfo']);
