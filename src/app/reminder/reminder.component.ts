@@ -21,18 +21,10 @@ export class ReminderComponent implements OnInit {
       this.array = v;
       console.log(this.array);
     })
-    console.log(this.array.length);
-    for( let i = 0;  i < this.array.length ; i++ ){
-      console.log('in if')
-      if(i % 2){
-        this.itemsArray.push(this.array[i]);
-      }
-      else{
-        this.idArray.push(this.array[i]);
-      }
-      console.log(this.itemsArray);
-      console.log(this.idArray);
-    }
+    this.itemsArray = this.array[0];
+    this.idArray = this.array[1];
+    console.log(this.itemsArray);
+    console.log(this.idArray);
   }
 
   membersPage(){
@@ -41,8 +33,9 @@ export class ReminderComponent implements OnInit {
   setReminder(){
     this.router.navigate(['/setReminder']);
   }
-  deleteReminder(a:String){
-    
+  deleteReminder(a:any){
+    this.api.deleteRemainder(a);
+    alert('reminder deleted.')
   }
 
 }

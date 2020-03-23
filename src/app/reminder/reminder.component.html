@@ -15,10 +15,12 @@
                 <p id='addRemider'>ضافة الى قائمة التذكير</p>
             </div>
             
-            <div  id='remindersContainer'  >
-                <div *ngFor='let item of itemArray' id='reminders'>
-                    <div id='titleAndIconContainer'>
-                        <img (click)="deleteReminder(item)" src='assets\img\close.png' id='moreInfoIcon'>
+            <div  id='remindersContainer'>
+                <div *ngFor='let item of itemsArray;let i=index'  id='reminders'>
+                    <div  id='titleAndIconContainer'>
+                        <button (click)="deleteReminder(idArray[i])" type="button" class="close" aria-label="Close" id='moreInfoIcon'>
+                        <span aria-hidden="true">&times;</span>
+                        </button>
                         <p id='reminderTitle'>{{item.title}}</p>
                     </div>
                     <div id='rows'>
