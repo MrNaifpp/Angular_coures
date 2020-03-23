@@ -10,14 +10,28 @@ import { Router } from '@angular/router';
 export class ReminderComponent implements OnInit {
 
   array =[];
+  itemsArray=[];
+  idArray=[];
+
   constructor(public api : ServicesService, private router: Router) { }
 
   async ngOnInit() {
 
     await this.api.pullMyRemainders().then(v => {
       this.array = v;
+      console.log(this.array);
+      
+      for(var i = 0; i < this.array.length ; i ++ ){
+        if(i % 2){
+          this.itemsArray.push(this.array[i]);
+        }
+        else{
+          this.idArray.push(this.array[i]);
+        }
+      }
+      console.log(this.itemsArray);
+      console.log(this.idArray);
   })
-  console.log(this.array);
   }
 
   membersPage(){
@@ -27,7 +41,7 @@ export class ReminderComponent implements OnInit {
     this.router.navigate(['/setReminder']);
   }
   deleteReminder(a:String){
-    console.log(a);
+    
   }
 
 }

@@ -340,13 +340,13 @@ export class ServicesService {
       .get()
       .then(function(querySnapshot) {
           querySnapshot.forEach(function(doc) {
-              // doc.data() is never undefined for query doc snapshots
-              console.log(doc.data().date)
-              testRemainder.date=(doc.data().date+""),
-              console.log(doc.data().date)
-              testRemainder.deleteId=doc.id,
-              testRemainder.time=doc.data().time,
-              testRemainder.title=doc.data().title.
+              // // doc.data() is never undefined for query doc snapshots
+              // console.log(doc.data().date)
+              // testRemainder.date= doc.data().date,
+              // console.log(doc.data().date)
+              // testRemainder.deleteId=doc.id,
+              // testRemainder.time=doc.data().time,
+              // testRemainder.title=doc.data().title.
         
                remainders.push(testRemainder)
               
@@ -384,11 +384,5 @@ export class ServicesService {
         }).catch(function(error) {
             console.error("Error removing document: ", error);
         });
-
-
-
-
       }
-      
-
 }
