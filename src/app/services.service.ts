@@ -322,8 +322,10 @@ export class ServicesService {
 
     let currentUser:user = await this.getUser();
     let userId;
+    let remainderIds =[];
     let remainders=[];
     let testRemainder:remainder;
+
 
     //get id of User
     await this.db.firestore.collection('user Information').where(
@@ -339,18 +341,17 @@ export class ServicesService {
       this.db.firestore.collection("RemainderDb").where("id", "==", userId)
       .get()
       .then(function(querySnapshot) {
-          querySnapshot.forEach(function(doc) {
-                   
+          querySnapshot.forEach(function(doc) {                  
                remainders.push(doc.data())
-               remainders.push(doc.id)
-              
+               remainderIds.push(doc.id)              
           });
           
       })
       .catch(function(error) {
           console.log("Error getting documents: ", error);
-      }); 
-        return remainders;
+      });
+       let allArray = [remainders,remainderIds] 
+       return allArray;
     }
 
     aqarInfo;
