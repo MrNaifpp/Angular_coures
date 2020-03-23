@@ -12,31 +12,9 @@
             </div>
             
             <div id='reminderItemsContainer'>
-                <div (click)="itemInfo()" id='reminderItem'>
-                    <p>title</p>
-                </div>
-                <div id='reminderItem'>
-                    <p>title</p>
-                </div>
-                <div id='reminderItem'>
-                    <p>title</p>
-                </div>
-                <div id='reminderItem'>
-                    <p>title</p>
-                </div>
-                <div id='reminderItem'>
-                    <p>title</p>
-                </div>
-                <div id='reminderItem'>
-                    <p>title</p>
-                </div>
-                <div id='reminderItem'>
-                    <p>title</p>
-                </div>
-                <div id='reminderItem'>
-                    <p>title</p>
-                </div>
-            
+                <div routerLink="/itemList/{{aqar.name}}" id='reminderItem' *ngFor="let item of arrayOfitems">
+                    <p>{{item.name}}</p>
+                </div>           
             </div>
             
 

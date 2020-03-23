@@ -9,11 +9,13 @@ import { Router } from '@angular/router';
 })
 export class MyItemsComponent implements OnInit {
 
+  arrayOfitems;
   constructor(public api : ServicesService, private router: Router) { }
 
   async ngOnInit() {
       await this.api.pullMyHistory().then(v => {
-         console.log(v)
+         this.arrayOfitems = v;
+         console.log(this.arrayOfitems)
      })
   }
   membersPage(){
