@@ -15,7 +15,6 @@ export class MyItemsComponent implements OnInit {
   async ngOnInit() {
       await this.api.pullMyHistory().then(v => {
          this.arrayOfitems = v;
-         console.log(this.arrayOfitems)
      })
      console.log(this.arrayOfitems)
   }

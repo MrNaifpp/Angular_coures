@@ -18,6 +18,7 @@ import { ItemInfoComponent } from './item-info/item-info.component';
 import { ReminderComponent } from './reminder/reminder.component';
 import { MyItemsComponent } from './my-items/my-items.component';
 import { SetReminderComponent } from './set-reminder/set-reminder.component';
+import { SecondItemInfoComponent } from './second-item-info/second-item-info.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SetReminderComponent } from './set-reminder/set-reminder.component';
     ItemInfoComponent,
     ReminderComponent,
     MyItemsComponent,
-    SetReminderComponent
+    SetReminderComponent,
+    SecondItemInfoComponent
   ],
   imports: [
     BrowserModule,

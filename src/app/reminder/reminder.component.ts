@@ -9,13 +9,15 @@ import { Router } from '@angular/router';
 })
 export class ReminderComponent implements OnInit {
 
+  array;
   constructor(public api : ServicesService, private router: Router) { }
 
   async ngOnInit() {
 
     await this.api.pullMyRemainders().then(v => {
-      console.log(v)
+      this.array = v;
   })
+  console.log(this.array);
   }
 
   membersPage(){
