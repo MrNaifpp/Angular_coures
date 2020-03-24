@@ -37,6 +37,13 @@ body{
     text-align: center;
 }
 
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
 #backBTNposition{
     padding-top: 15pt;
     margin-left: 190pt;
@@ -77,7 +84,7 @@ body{
 .userInputStyle{
     margin-left: 20pt;
     width: 120pt;
-    background-color: rgb(107, 57, 11, 0.5);
+    background-color: rgb(107, 57, 11, 0.1);
     direction: rtl;
     border-radius: 20pt;
 }

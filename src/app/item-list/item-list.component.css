@@ -46,6 +46,15 @@ body{
     border-radius: 20pt;
 }
 
+.searchImg{
+    width: 20pt;
+    height: 20pt;
+}
+
+.a{
+    display: none;
+}
+
 #searchPosition{
     text-align: center;
 }
