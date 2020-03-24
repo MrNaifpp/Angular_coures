@@ -381,6 +381,6 @@ export class ServicesService {
         }).catch(function(error) {
             console.error("Error removing document: ", error);
         });
-        window.location.reload();
+        this.router.navigate(['/member'])
       }
 }
