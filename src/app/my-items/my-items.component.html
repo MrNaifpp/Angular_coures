@@ -16,10 +16,11 @@
                     <div *ngIf="isAnonymous" id='reminderItemAnonymous' >
                         <p>التسجيل اولا للحصول على تاريخ الادوية</p>
                     </div>           
-                
-                <div  routerLink="/myItemsSecondPage/{{item.name}}" id='reminderItem' *ngFor="let item of arrayOfitems">
-                    <p>{{item.name}}</p>
-                </div>           
+                <a routerLink="/myItemsSecondPage/{{item?.name}}">
+                    <div id='reminderItem' *ngFor="let item of arrayOfitems">
+                        <p>{{item?.name}}</p>
+                    </div>
+                </a>        
             </div>
             
 

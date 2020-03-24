@@ -26,10 +26,12 @@
                     <br>
                     <p class='text' id='price'>{{aqar?.price}} ريال</p>
                 </div>
-                <div routerLink="/itemList/{{aqar?.name}}/{{aqar?.name}}" id='reminderContainer'>
+                <a [routerLink]="['/itemList/{{aqar?.name}}/{{aqar?.name}}']">
+                    <div id='reminderContainer'>
                     <i class="fa fa-plus" id='icon'></i>
                     <p id='remider'>ضافة الى قائمة التذكير</p>
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
     </body>

@@ -15,15 +15,18 @@
             </div>
             
             <div id='scroll' style='display: block'>
-                <div  *ngFor="let aqar of listOfAqar" id='items' routerLink="/itemList/{{aqar.name}}" >
-                    {{ aqar.name }}
-                </div>
-                
+                <a routerLink="/itemList/{{aqar.name}}">
+                    <div *ngFor="let aqar of listOfAqar" id='items'>
+                        {{ aqar.name }}
+                    </div>
+                </a>
             </div>
             <div id='searchedItem' style='display: none'>
-                <div id='items' routerLink="/itemList/{{item?.name}}">
-                    {{ item?.name }}
-                </div>
+                <a routerLink="/itemList/{{item?.name}}">
+                    <div id='items'>
+                        {{ item?.name }}
+                    </div>
+                </a>
             </div>
 
         </div>

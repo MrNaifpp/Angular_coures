@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../services.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, RouterModule } from '@angular/router';
 import { aqar } from '../models/models';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 

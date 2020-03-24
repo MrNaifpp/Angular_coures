@@ -3,9 +3,11 @@
     </head>
     <body>
         <div id='container'>
-            <div routerLink='/myItems' id='backBTNposition' >
-                <button id='backBTN'>></button>
-            </div>
+            <a routerLink='/myItems'>
+                <div id='backBTNposition' >
+                    <button id='backBTN'>></button>
+                </div>
+            </a>
             <div id='itemInfoContainer'>
                 <div id='imgContainer'><img src='assets\img\pic.png' id='itemImg'></div>
                 <div id='textContainer'>
@@ -26,10 +28,12 @@
                     <br>
                     <p class='text' id='price'>{{aqar?.price}}</p>
                 </div>
-                <div routerLink="/itemList/{{aqar?.name}}/{{aqar?.name}}" id='reminderContainer'>
-                    <i class="fa fa-plus" id='icon'></i>
-                    <p id='remider'>ضافة الى قائمة التذكير</p>
-                </div>
+                <a routerLink="/itemList/{{aqar?.name}}/{{aqar?.name}}">
+                    <div id='reminderContainer'>
+                        <i class="fa fa-plus" id='icon'></i>
+                        <p id='remider'>ضافة الى قائمة التذكير</p>
+                    </div>
+                </a>
             </div>
         </div>
     </body>
