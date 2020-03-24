@@ -377,9 +377,10 @@ export class ServicesService {
       deleteRemainder(id){
   
         this.db.firestore.collection("RemainderDb").doc(id).delete().then(function() {
-          console.log("Remainder successfully deleted!");
+          
         }).catch(function(error) {
             console.error("Error removing document: ", error);
         });
+        this.router.navigate(["/member"])
       }
 }
