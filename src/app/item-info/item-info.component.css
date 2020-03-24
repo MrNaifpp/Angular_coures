@@ -42,6 +42,7 @@ body{
 }
 #itemImg{
     width: 200pt;
+    height: 130pt;
 }
 .text{
     direction: rtl;
