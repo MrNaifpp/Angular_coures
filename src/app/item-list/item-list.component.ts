@@ -68,7 +68,6 @@ export class ItemListComponent implements OnInit {
     }
     }
     else{
-      alert('not valid input!');
         y.style.display = "none";
         x.style.display = "block";
       
